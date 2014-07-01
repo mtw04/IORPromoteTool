@@ -1,0 +1,16 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<parameters>
+  <parameter name="IIS Web Application Name" description="" value="Default Web Site/IORPromote" tags="IisApp">
+    <parameterEntry kind="ProviderPath" scope="IisApp" match="^C:\\SVN\\Infrastructure\\Infrastructure\ Operations\ Request\ Form\\IORPromoteTool\\IORPromoteTool\\obj\\Release\\Package\\PackageTmp$" />
+    <parameterEntry kind="ProviderPath" scope="setAcl" match="^C:\\SVN\\Infrastructure\\Infrastructure\ Operations\ Request\ Form\\IORPromoteTool\\IORPromoteTool\\obj\\Release\\Package\\PackageTmp$" />
+  </parameter>
+  <parameter name="EmployeeEntities-Web.config Connection String" description="" value="metadata=res://*/Models.EmployeeDBEntity.csdl|res://*/Models.EmployeeDBEntity.ssdl|res://*/Models.EmployeeDBEntity.msl;provider=System.Data.SqlClient;provider connection string=&quot;Data Source=zurich;Initial Catalog=Compulink;Persist Security Info=True;User ID=inside;Password=inside;MultipleActiveResultSets=True;Application Name=EntityFramework&quot;" tags="">
+    <parameterEntry kind="XmlFile" scope="C:\\SVN\\Infrastructure\\Infrastructure\ Operations\ Request\ Form\\IORPromoteTool\\IORPromoteTool\\obj\\Release\\Package\\PackageTmp\\Web\.config$" match="/configuration/connectionStrings/add[@name='EmployeeEntities']/@connectionString" />
+  </parameter>
+  <parameter name="PromoteEntities-Web.config Connection String" description="" value="metadata=res://*/Models.PromoteDBEntity.csdl|res://*/Models.PromoteDBEntity.ssdl|res://*/Models.PromoteDBEntity.msl;provider=System.Data.SqlClient;provider connection string=&quot;Data Source=zurich;Initial Catalog=Infrastructure;Persist Security Info=True;User ID=infrastructure;Password=RunSm@rt3r;MultipleActiveResultSets=True;Application Name=EntityFramework&quot;" tags="">
+    <parameterEntry kind="XmlFile" scope="C:\\SVN\\Infrastructure\\Infrastructure\ Operations\ Request\ Form\\IORPromoteTool\\IORPromoteTool\\obj\\Release\\Package\\PackageTmp\\Web\.config$" match="/configuration/connectionStrings/add[@name='PromoteEntities']/@connectionString" />
+  </parameter>
+  <parameter name="TestPromoteEntities-Web.config Connection String" description="" value="metadata=res://*/Models.TestPromoteDBEntity.csdl|res://*/Models.TestPromoteDBEntity.ssdl|res://*/Models.TestPromoteDBEntity.msl;provider=System.Data.SqlClient;provider connection string=&quot;data source=NAHIKU\MSSQLSERVER12;initial catalog=IORdb;persist security info=True;user id=infrastructure;password=RunSm@rt3r;MultipleActiveResultSets=True;App=EntityFramework&quot;" tags="">
+    <parameterEntry kind="XmlFile" scope="C:\\SVN\\Infrastructure\\Infrastructure\ Operations\ Request\ Form\\IORPromoteTool\\IORPromoteTool\\obj\\Release\\Package\\PackageTmp\\Web\.config$" match="/configuration/connectionStrings/add[@name='TestPromoteEntities']/@connectionString" />
+  </parameter>
+</parameters>

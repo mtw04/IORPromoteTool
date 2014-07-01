@@ -1,0 +1,20 @@
+﻿<div class="grid">
+    <div class="grid-inner">
+        <table>
+            <thead class="clickable">
+                <tr>
+                    <th ng-repeat="(name, column) in columns" ng-click="onColumnClick(name, column)" ng-show="column.visible || column.alwaysVisible">
+                        <div class="th-cell" ng-class="column.arrowClass">
+                            <p class="th-text">{{column.displayName}}</p>
+                        </div>
+                    </th>
+                </tr>
+            </thead>
+            <tbody style="cursor:default">
+                <tr ng-repeat="item in pageData | filter: query" ng-click="onSelectRow(item)" ng-dblclick="onDblClickRow(item)" ng-class="{selected: item.selected}">
+                    <td ng-repeat="(name, column) in columns" ng-style="{'text-align': column.align}" bind-switch-value="{{column.bindMode || 'ng-bind'}}"  bind-switch="(item[name].display || item[name].value || '') + ''" ng-show="column.visible"></td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+</div>

@@ -1,0 +1,42 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="EmployeesDBModel" Alias="Self" p1:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:p1="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+  <EntityContainer Name="EmployeesDBEntities" p1:LazyLoadingEnabled="true">
+    <EntitySet Name="employees" EntityType="EmployeesDBModel.employee" />
+  </EntityContainer>
+  <EntityType Name="employee">
+    <Key>
+      <PropertyRef Name="emp_number" />
+    </Key>
+    <Property Name="emp_number" Type="Int16" Nullable="false" p1:StoreGeneratedPattern="Identity" />
+    <Property Name="emp_fname" Type="String" Nullable="false" MaxLength="25" Unicode="true" FixedLength="false" />
+    <Property Name="emp_lname" Type="String" Nullable="false" MaxLength="50" Unicode="true" FixedLength="false" />
+    <Property Name="status" Type="String" MaxLength="2" Unicode="true" FixedLength="false" />
+    <Property Name="parttime" Type="Boolean" />
+    <Property Name="emp_nickname" Type="String" MaxLength="25" Unicode="true" FixedLength="false" />
+    <Property Name="emp_title" Type="String" MaxLength="50" Unicode="true" FixedLength="false" />
+    <Property Name="emp_sex" Type="String" MaxLength="1" Unicode="false" FixedLength="true" />
+    <Property Name="nwuser" Type="String" MaxLength="20" Unicode="true" FixedLength="false" />
+    <Property Name="EmployeeNo" Type="Int32" />
+    <Property Name="birth_date" Type="DateTime" Precision="0" />
+    <Property Name="report_to" Type="String" MaxLength="20" Unicode="true" FixedLength="false" />
+    <Property Name="reporttoID" Type="Int16" />
+    <Property Name="department" Type="String" MaxLength="50" Unicode="true" FixedLength="false" />
+    <Property Name="emp_group" Type="String" MaxLength="50" Unicode="true" FixedLength="false" />
+    <Property Name="emp_unit" Type="String" MaxLength="50" Unicode="true" FixedLength="false" />
+    <Property Name="location" Type="String" MaxLength="50" Unicode="true" FixedLength="false" />
+    <Property Name="email" Type="String" MaxLength="40" Unicode="true" FixedLength="false" />
+    <Property Name="hire_date" Type="DateTime" Precision="0" />
+    <Property Name="termination_date" Type="DateTime" Precision="0" />
+    <Property Name="phone_num" Type="String" MaxLength="20" Unicode="true" FixedLength="false" />
+    <Property Name="mobile_num" Type="String" MaxLength="20" Unicode="true" FixedLength="false" />
+    <Property Name="IsManager" Type="Boolean" Nullable="false" />
+    <Property Name="IsEmployed" Type="Boolean" Nullable="false" />
+    <Property Name="LastYearVacationHour" Type="Double" />
+    <Property Name="compday" Type="Int32" />
+    <Property Name="LastYearSickHour" Type="Double" />
+    <Property Name="picture" Type="Binary" MaxLength="Max" FixedLength="false" />
+    <Property Name="original_hiredate" Type="DateTime" Precision="3" />
+    <Property Name="primary_location" Type="String" MaxLength="50" Unicode="true" FixedLength="false" />
+    <Property Name="consultant" Type="Boolean" />
+  </EntityType>
+</Schema>

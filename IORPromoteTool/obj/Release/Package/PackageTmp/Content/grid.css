@@ -1,0 +1,382 @@
+/*--------------Custom UI grid-------------*/
+/*-----------------------------------------*/
+
+/*From Helen*/
+.border-box {
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    box-sizing: border-box;
+}
+
+.ellipsis {
+    white-space: nowrap;
+    overflow: hidden;
+    -o-text-overflow: ellipsis;
+    -ms-text-overflow: ellipsis;
+    text-overflow: ellipsis;
+}
+
+.title {
+    background-color: #fafafa;
+    font-weight: bold;
+    padding: 10px 10px 10px 20px;
+    border-bottom: 1px solid #e6e6e6;
+    font-size: 14px;
+    height: 20px;
+}
+
+.title .title-group-right {
+    position: relative;
+    float: right;
+}
+
+.title .title-group-right .page-toggle {
+    margin-top: -5px;
+    padding-right: 10px;
+}
+
+.clickable {
+    cursor: pointer;
+}
+
+.nonclickable {
+    cursor: auto;
+}
+
+.ng-cloak {
+    display: none !important;
+}
+
+.message {
+    margin: -5px 0 0 12px;
+    padding: 2px 35px 2px 14px;
+}
+
+.selected {
+    font-weight: bold !important;
+    color: #333 !important;
+}
+
+.relative {
+    position: relative;
+}
+
+.select-item {
+    text-align: center;
+    margin-top: 100px;
+}
+
+.select-item .select-item-text {
+    margin-top: 20px;
+}
+
+.dropdown-button {
+    border: 1px solid lightgray;
+    padding: 4px;
+    display: inline-block;
+    width: 300px;
+    -webkit-border-radius: 5px;
+    -moz-border-radius: 5px;
+    border-radius: 5px;
+}
+
+.dropdown-button .dropdown-text {
+    display: inline-block;
+    margin-left: 5px;
+    width: 265px;
+    white-space: nowrap;
+    overflow: hidden;
+    -o-text-overflow: ellipsis;
+    -ms-text-overflow: ellipsis;
+    text-overflow: ellipsis;
+}
+
+.dropdown-button b {
+    float: right;
+    margin: 8px;
+}
+
+.bold {
+    font-weight: bold;
+}
+
+.popover-content {
+    font-weight: normal;
+}
+
+.table-cell-like {
+    vertical-align: middle;
+    display: table-cell;
+}
+
+.emphasize-container {
+    line-height: 30px;
+}
+
+.emphasize-container .emphasize {
+    font-size: 30px;
+    font-weight: bold;
+    color: #3f8a99;
+    padding-right: 4px;
+    vertical-align: -1px;
+}
+
+.big-emphasize {
+    font-size: 36px;
+    font-weight: normal;
+    color: #3f8a99;
+    padding-right: 8px;
+    vertical-align: -2px;
+}
+
+.tooltip-container {
+    position: relative;
+    display: inline-block;
+    font-weight: normal;
+    white-space: nowrap;
+}
+
+.tooltip-container .tooltip-inner {
+    white-space: nowrap;
+    overflow: hidden;
+    -o-text-overflow: ellipsis;
+    -ms-text-overflow: ellipsis;
+    text-overflow: ellipsis;
+}
+
+.visible {
+    filter: alpha(opacity=100);
+    opacity: 1;
+    -moz-opacity: 1;
+    -webkit-opacity: 1;
+}
+
+.invisible {
+    filter: alpha(opacity=100);
+    opacity: 0;
+    -moz-opacity: 0;
+    -webkit-opacity: 0;
+}
+
+.deemphasize {
+    color: #aaa;
+    white-space: nowrap;
+}
+
+.red {
+    color: red;
+}
+
+.green {
+    color: green;
+}
+
+.clear {
+    clear: left;
+}
+
+.tab1 {
+    display: block;
+    padding-left: 20px;
+}
+
+.tab2 {
+    display: block;
+    padding-left: 40px;
+}
+
+.tab3 {
+    display: block;
+    padding-left: 60px;
+}
+
+.tab4 {
+    display: block;
+    padding-left: 80px;
+}
+
+.tab5 {
+    display: block;
+    padding-left: 100px;
+}
+
+.tab6 {
+    display: block;
+    padding-left: 120px;
+}
+
+.tab7 {
+    display: block;
+    padding-left: 140px;
+}
+
+.tab8 {
+    display: block;
+    padding-left: 160px;
+}
+
+.tab9 {
+    display: block;
+    padding-left: 180px;
+}
+
+.tab10 {
+    display: block;
+    padding-left: 200px;
+}
+
+.col-descending {
+    background: url('../../Images/General/arrow_down.png') no-repeat right !important;
+}
+
+.col-ascending {
+    background: url('../../Images/General/arrow_up.png') no-repeat right;
+}
+
+.page-right-icon {
+    background-image: url('../../Images/Sprites/wf_icon_sprite.png');
+    width: 22px;
+    height: 22px;
+    vertical-align: middle;
+    background-repeat: no-repeat;
+    display: inline-block;
+    position: relative;
+    text-indent: -9999px;
+    background-position: -133px -165px;
+}
+
+.page-right-icon.disabled {
+    background-position: -165px -165px;
+}
+
+.page-left-icon {
+    background-image: url('../../Images/Sprites/wf_icon_sprite.png');
+    width: 22px;
+    height: 22px;
+    vertical-align: middle;
+    background-repeat: no-repeat;
+    display: inline-block;
+    position: relative;
+    text-indent: -9999px;
+    background-position: -133px -133px;
+}
+
+.page-left-icon.disabled {
+    background-position: -165px -133px;
+}
+
+.col-selector-icon {
+    background-image: url('../../Images/Sprites/wf_icon_sprite.png');
+    width: 22px;
+    height: 22px;
+    vertical-align: middle;
+    background-repeat: no-repeat;
+    display: inline-block;
+    position: relative;
+    text-indent: -9999px;
+    background-position: -69px -133px;
+}
+
+.grid-button {
+    height: 22px;
+    width: 22px;
+    display: inline-block;
+    margin: 10px 0 10px 10px;
+}
+
+.grid-menu-bar {
+    height: 40px;
+    /*position: absolute;*/
+    right: 0;
+    left: 0;
+    background-color: white;
+    z-index: 500;
+    padding: 0 10px;
+}
+
+.grid-menu-bar .title-button {
+    margin: 6px 0;
+}
+
+/* Mike custom */
+.grid-action-bar {
+    height: 40px;
+    /*position: absolute;*/
+    right: 0;
+    left: 0;
+    background-color: white;
+    z-index: 500;
+    padding: 0 10px;
+}
+
+.table-icon {
+    margin: 0 2px 3px 2px;
+    min-width: 16px;
+}
+
+.pagination-input {
+    width: 25px;
+    margin-left: 10px;
+    margin-right: 5px;
+}
+
+table {
+    width: 100%;
+    margin: 0 0 0 -1px;
+    border-collapse: collapse;
+}
+
+tbody tr:hover {
+    background-color: #fffddd;
+}
+
+tbody tr.selected {
+    font-weight: normal !important;
+    background-color: #fffcca;
+}
+
+thead th {
+    font-weight: normal;
+    text-align: left;
+    border: 1px solid #e5e5e5;
+    border-right: none;
+    position: relative;
+    top: 0px;
+    white-space: nowrap;
+    overflow: hidden;
+    -o-text-overflow: ellipsis;
+    -ms-text-overflow: ellipsis;
+    text-overflow: ellipsis;
+}
+
+thead th .th-cell {
+    margin-right: 10px;
+}
+
+thead th .th-cell:hover {
+    background: url('../../Images/General/arrow_up.png') no-repeat right;
+}
+
+thead th p {
+    margin: 10px;
+}
+
+td {
+    padding: 10px;
+    height: 25px;
+    white-space: nowrap;
+    overflow: hidden;
+    -o-text-overflow: ellipsis;
+    -ms-text-overflow: ellipsis;
+    text-overflow: ellipsis;
+}
+
+.checkbox-list {
+    list-style-type: none;
+    margin: 0 0 0 5px;
+}
+
+/* Mike's Custom */
+span.right {
+    float: right;
+}

@@ -1,0 +1,20 @@
+﻿<div class="grid-menu-bar">
+    <div class="col-md-5">
+        <div class="tooltip-container prev-tooltip">
+            <button hover-tooltip="prevTooltip" class="btn title-button clickable" ng-disabled="pageController.currentIndex == 0" ng-click="pageController.GoPrevPage();"><i class="page-left-icon"></i></button>
+            <tooltip placement="top" tooltip="prevTooltip">Previous page</tooltip>
+        </div>
+        <div class="tooltip-container">
+            <button type="button" hover-tooltip="nextTooltip" class="btn title-button clickable" ng-disabled="pageController.displayIndex == pageController.numPages"ng-click="pageController.GoNextPage();"><i class="page-right-icon"></i></button>
+            <tooltip placement="top" tooltip="nextTooltip">Next page</tooltip>
+        </div>
+        <input class="pagination-input" ng-model="pageController.displayIndex" ng-change="pageController.UpdatePage()"/> of {{pageController.numPages}}
+        <span ng-show="pageController.numItems > 0" style="margin-left: 10px" class="deemphasize" ng-bind="searchIndicies"></span>
+    </div>
+    <div class="col-md-3"> <!--Added UI for search box-->
+        <div class="input-group" style="width: 200px;">
+            <input type="text" class="form-control" placeholder="Search" ng-model="query">
+            <span class="input-group-addon"><i class="glyphicon glyphicon-search"></i></span>
+        </div>
+    </div>
+</div>

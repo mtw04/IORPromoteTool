@@ -1,0 +1,16 @@
+﻿<div ng-show="$state.current.name=='user'">
+
+    <user-grid data="users" on-select-item="onSelectItem">
+    </user-grid>
+
+    <div class="actions-bar">
+        <button class="btn btn-primary" data-ng-click="createMode()">Create User</button>
+        <button class="btn btn-warning" data-ng-click="editMode()">Edit User</button>
+        <button class="btn btn-danger" data-ng-click="deleteMode()"><i class="glyphicon glyphicon-trash"></i> Delete User</button>
+    </div>
+
+</div>
+
+<div ui-view>
+    <!-- Child State in here -->
+</div> 

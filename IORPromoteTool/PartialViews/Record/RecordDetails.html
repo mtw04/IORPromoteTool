@@ -1,0 +1,70 @@
+﻿<div class="page-header">Request Details</div>
+        
+<div class="col-md-9">
+    <form class="form-horizontal" name="PromoteHistory" id="PromoteHistory" method="post">
+
+        <div class="form-group">
+            <label class="col-sm-3 control-label" for="CardId">ID:</label>
+            <div class="col-sm-9">
+                <p class="form-control-static" id="CardId" data-ng-bind="item.CardId"></p>
+            </div>
+        </div>
+
+        <div class="form-group">
+            <label class="col-sm-3 control-label" for="PromoteDate">Promotion Date:</label>
+            <div class="col-sm-9">
+                <p class="form-control-static" id="PromoteDate">{{ item.PromoteDate | date: "MM/dd/yyyy" }}</p>
+            </div>
+        </div>
+        
+        <div class="form-group">
+            <label class="col-sm-3 control-label" for="Promoter">Promoter:</label>
+            <div class="col-sm-9">
+                <p class="form-control-static" id="Promoter" data-ng-bind="item.Promoter"></p>
+            </div>
+        </div>
+
+        <div class="form-group">
+            <label class="col-sm-3 control-label" for="Submitter">Submitter:</label>
+            <div class="col-sm-9">
+                <p class="form-control-static" id="Submitter" data-ng-bind="item.Submitter"></p>
+            </div>
+        </div>
+
+        <div class="form-group">
+            <label class="col-sm-3 control-label" for="Title">Title:</label>
+            <div class="col-sm-9">
+                <p class="form-control-static" id="Title" data-ng-bind="item.Title"></p>
+            </div>
+        </div>
+
+        <div class="form-group">
+            <label class="col-sm-3 control-label" for="Description">Description:</label>
+            <div class="col-sm-9">
+                <p class="form-control-static" id="Description" data-ng-bind-html="item.Description"></p>
+            </div>
+        </div>
+
+        <div class="form-group">
+            <label class="col-sm-3 control-label" for="Type">Type:</label>
+            <div class="col-sm-9">
+                <p class="form-control-static" id="Type" data-ng-bind="item.Type"></p>
+            </div>
+        </div>
+
+        <div class="form-group">
+            <label class="col-sm-3 control-label" for="Priority">Priority:</label>
+            <div class="col-sm-9">
+                <p class="form-control-static" id="Priority" data-ng-bind="item.Priority"></p>
+            </div>
+        </div>
+
+        <hr />
+
+        <div class="actions-bar"> 
+            <button class="btn btn-default" data-ng-click="returnToList()"><i class="fa fa-reply"></i> Back</button>
+        </div>
+
+    </form>
+</div>
+

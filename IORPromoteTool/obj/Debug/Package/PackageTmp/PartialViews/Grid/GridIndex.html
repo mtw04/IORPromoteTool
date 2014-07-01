@@ -1,0 +1,14 @@
+﻿<div ng-show="parentState">
+
+    <grid-header index-type="indexType"></grid-header>
+
+    <item-grid data="items" on-select-item="onSelectItem" initial-sort-by="initialSortBy" pre-sort="preSort">
+    </item-grid>
+
+    <grid-actions index-type="indexType" item-select="itemSelect" is-reject-admin="isRejectAdmin" create-mode="createMode()" edit-mode="editMode()" delete-mode="deleteMode()" details-mode="detailsMode()" promote-mode="promoteMode()" reject-mode="rejectMode()"></grid-actions>
+
+</div>
+
+<div ui-view>
+    <!-- Child State in here -->
+</div> 

@@ -1,0 +1,45 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+  <EntityContainerMapping StorageEntityContainer="PromoteDBModelStoreContainer" CdmEntityContainer="PromoteDBEntities">
+    <EntitySetMapping Name="IORSettings">
+      <EntityTypeMapping TypeName="PromoteDBModel.IORSetting">
+        <MappingFragment StoreEntitySet="IORSettings">
+          <ScalarProperty Name="PromoteFrequency" ColumnName="PromoteFrequency" />
+          <ScalarProperty Name="LogDetails" ColumnName="LogDetails" />
+          <ScalarProperty Name="LogInfo" ColumnName="LogInfo" />
+          <ScalarProperty Name="PromoteLane" ColumnName="PromoteLane" />
+          <ScalarProperty Name="TempPath" ColumnName="TempPath" />
+          <ScalarProperty Name="BoardId" ColumnName="BoardId" />
+          <ScalarProperty Name="Id" ColumnName="Id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="PromoteRecords">
+      <EntityTypeMapping TypeName="PromoteDBModel.PromoteRecord">
+        <MappingFragment StoreEntitySet="PromoteRecords">
+          <ScalarProperty Name="Submitter" ColumnName="Submitter" />
+          <ScalarProperty Name="CardId" ColumnName="CardId" />
+          <ScalarProperty Name="Deadline" ColumnName="Deadline" />
+          <ScalarProperty Name="Tags" ColumnName="Tags" />
+          <ScalarProperty Name="Priority" ColumnName="Priority" />
+          <ScalarProperty Name="Type" ColumnName="Type" />
+          <ScalarProperty Name="Description" ColumnName="Description" />
+          <ScalarProperty Name="Title" ColumnName="Title" />
+          <ScalarProperty Name="PromoteDate" ColumnName="PromoteDate" />
+          <ScalarProperty Name="UserName" ColumnName="UserName" />
+          <ScalarProperty Name="Id" ColumnName="Id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="PromoteUsers">
+      <EntityTypeMapping TypeName="PromoteDBModel.PromoteUser">
+        <MappingFragment StoreEntitySet="PromoteUsers">
+          <ScalarProperty Name="LastPromote" ColumnName="LastPromote" />
+          <ScalarProperty Name="Frequency" ColumnName="Frequency" />
+          <ScalarProperty Name="Name" ColumnName="Name" />
+          <ScalarProperty Name="Id" ColumnName="Id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+  </EntityContainerMapping>
+</Mapping>

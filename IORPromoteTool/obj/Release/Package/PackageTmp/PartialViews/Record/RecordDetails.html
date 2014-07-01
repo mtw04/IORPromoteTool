@@ -1,0 +1,62 @@
+﻿<fieldset>
+    <legend>Request Details</legend>
+        
+    <div class="display-label">
+        <label for="CardId">Request ID</label>
+    </div>
+    <div class="display-field">
+        {{ record.CardId }}
+    </div>
+
+    <div class="display-label">
+        <label for="PromoteDate">Promotion Date</label>
+    </div>
+    <div class="display-field">
+        {{ record.PromoteDate | date: 'MM/dd/yyyy' }}
+    </div>
+
+    <div class="display-label">
+        <label for="Promoter">Promoter Name</label>
+    </div>
+    <div class="display-field">
+        {{ record.Promoter }}
+    </div>
+
+    <div class="display-label">
+        <label for="Submitter">Submitter Name</label>
+    </div>
+    <div class="display-field">
+        {{ record.Submitter }}
+    </div>
+
+    <div class="display-label">
+        <label for="Title">Request Title</label>
+    </div>
+    <div class="display-field">
+        {{ record.Title }} 
+    </div>
+
+    <div class="display-label">
+        <label for="Description">Request Description</label>
+    </div>
+    <div class="display-field" ng-bind-html="record.Description"></div>
+
+    <div class="display-label">
+        <label for="Type">Request Type</label>
+    </div>
+    <div class="display-field">
+        {{ record.Type }}
+    </div>
+
+    <div class="display-label">
+        <label for="Priority">Request Priority</label>
+    </div>
+    <div class="display-field">
+        {{ record.Priority }}
+    </div>
+
+</fieldset>
+
+<div class="actions-bar"> 
+    <button class="btn btn-default" data-ng-click="returnToList()"><i class="icon-back"></i>Back</button>
+</div>

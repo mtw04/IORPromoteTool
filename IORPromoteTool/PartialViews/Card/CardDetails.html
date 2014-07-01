@@ -1,0 +1,93 @@
+﻿<div data-ng-if="parentState">
+    <div class="page-header">Request Details</div>
+
+    <div class="col-md-9">
+        <form class="form-horizontal" name="PromoteRequest" id="PromoteRequest" method="post">
+            <div class="form-group">
+                <label class="col-sm-3 control-label" for="RequestId">ID:</label>
+                <div class="col-sm-9">
+                    <p class="form-control-static" id="RequestId" data-ng-bind="item.Id"></p>
+                </div>
+            </div>
+
+            <div class="form-group">
+                <label class="col-sm-3 control-label" for="Submitter">Submitter:</label>
+                <div class="col-sm-9">
+                    <p class="form-control-static" id="Submitter" data-ng-bind="item.Submitter"></p>
+                </div>
+            </div>
+
+            <div class="form-group">
+                <label class="col-sm-3 control-label" for="Title">Title:</label>
+                <div class="col-sm-9">
+                    <p class="form-control-static" id="Title" data-ng-bind="item.Title"></p>
+                </div>
+            </div>
+
+            <div class="form-group">
+                <label class="col-sm-3 control-label" for="Description">Description:</label>
+                <div class="col-sm-9">
+                    <p class="form-control-static" id="Description" data-ng-bind-html="item.Description"></p>
+                </div>
+            </div>
+
+            <div class="form-group">
+                <label class="col-sm-3 control-label" for="Priority">Priority:</label>
+                <div class="col-sm-9">
+                    <p class="form-control-static" id="Priority" data-ng-bind="item.PriorityText"></p>
+                </div>
+            </div>
+
+            <div class="form-group">
+                <label class="col-sm-3 control-label" for="System">System:</label>
+                <div class="col-sm-9">
+                    <p class="form-control-static" id="System" data-ng-bind="item.Tags"></p>
+                </div>
+            </div>
+
+            <div class="form-group">
+                <label class="col-sm-3 control-label" for="Type">Type:</label>
+                <div class="col-sm-9">
+                    <p class="form-control-static" id="Type" data-ng-bind="item.TypeName"></p>
+                </div>
+            </div>
+    
+            <div class="form-group">
+                <label class="col-sm-3 control-label" for="DueDate">Due Date:</label>
+                <div class="col-sm-9">
+                    <p class="form-control-static" id="DueDate">{{ item.DueDate | date: 'MM/dd/yyyy' }}</p>
+                </div>
+            </div>
+
+            <hr />
+
+            <div data-ng-if="!isDelete">
+                <div class="actions-bar">
+                    <button type="submit" class="btn btn-success" data-ng-click="promote(item)" data-ng-disabled="disabledButton"><i class="fa fa-check"></i> Promote</button>
+                    <button type="button" class="btn btn-default" data-ng-click="returnToList()"><i class="fa fa-reply"></i> Back</button>
+                </div>
+            </div>
+
+            <div data-ng-if="isDelete">
+                <div class="form-group">
+                    <label class="col-sm-3 control-label" for="RejectComment">Reject Comment:</label>
+                    <div class="col-sm-9">
+                        <input class="form-control" id="RejectComment" data-ng-maxlength="1024" name="RejectComment" type="text" data-ng-model="item.Comment" data-ng-required="true" auto-focus/>
+                        <span class="label label-danger" data-ng-show="UserDetailsForm.RejectComment.$error.required && formError">Required!</span> 
+                    </div>
+                </div>
+
+                <div class="actions-bar">
+                    <button type="button" class="btn btn-danger" data-ng-click="reject(item)" data-ng-disabled="disabledButton"><i class="fa fa-trash-o"></i> Confirm Reject</button>
+                    <button type="button" class="btn btn-default" data-ng-click="returnToList()"><i class="fa fa-reply"></i> Back</button>
+                </div>
+            </div>
+
+        </form>
+    </div>
+</div>
+
+<div ui-view>
+    <!-- Child State in here -->
+    <!-- Mike: Child state is for passing data into promotion approval page -->
+</div>

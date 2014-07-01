@@ -1,0 +1,57 @@
+﻿@model List<IORPromoteTool.Models.PromoteUser>
+
+@{
+    ViewBag.Title = "User Index";
+}
+
+<h2>Privileged Users List</h2>
+
+<table class="cards">
+    <tr>
+        <th>
+            Name
+        </th>
+        <th>
+            Full Name
+        </th>
+        <th>
+            Frequency
+        </th>
+        <th>
+            Last Promote
+        </th>
+        @*<th></th>*@
+        <th></th>
+        <th></th>
+    </tr>
+    @foreach (IORPromoteTool.Models.PromoteUser user in Model)
+    {
+        <tr>
+            <td>
+                @Html.DisplayFor(m => user.Name)
+            </td>
+            <td>
+                @Html.DisplayFor(m => user.FullName)
+            </td>
+            <td>
+                @Html.DisplayFor(m => user.Frequency)
+            </td>
+            <td>
+                @Html.DisplayFor(m => user.LastPromote)
+            </td>
+            @*<td>
+                @Html.ActionLink("Details", "Details", new { id = user.Id })
+            </td>*@
+            <td>
+                @Html.ActionLink("Edit", "Edit", new { id = user.Id })
+            </td>
+            <td>
+                @Html.ActionLink("Delete", "Delete", new { id = user.Id })
+            </td>
+        </tr>
+    }
+</table>
+<div>
+    <br />
+    @Html.ActionLink("Create New", "Create")
+</div>

@@ -1,0 +1,79 @@
+﻿@model LeankitLibrary.Entities.Card
+
+@{
+    ViewBag.Title = "Promote Request";
+}
+
+<h2>Promote Request</h2>
+
+@using (Html.BeginForm()) {
+
+    <fieldset>
+        <legend>Request</legend>
+
+        <div class="display-label">
+            @Html.DisplayNameFor(model => model.Id)
+        </div>
+        <div class="display-field">
+            <a href="@ViewBag.BaseUrl@Model.Id">
+                @Html.DisplayFor(model => model.Id)
+            </a>
+        </div>
+        <div class="display-label">
+             @Html.DisplayNameFor(model => model.Submitter)
+        </div>
+        <div class="display-field">
+            @Html.DisplayFor(model => model.Submitter)
+        </div>
+        <div class="display-label">
+             @Html.DisplayNameFor(model => model.Title)
+        </div>
+        <div class="display-field">
+            @Html.DisplayFor(model => model.Title)
+        </div>
+        <div class="display-label">
+             @Html.DisplayNameFor(model => model.Description)
+        </div>
+        <div class="display-field">
+            @Html.DisplayFor(model => model.Description)
+        </div>
+        <div class="display-label">
+             @Html.DisplayNameFor(model => model.PriorityText)
+        </div>
+        <div class="display-field">
+            @Html.DisplayFor(model => model.PriorityText)
+        </div>
+        <div class="display-label">
+             @Html.DisplayNameFor(model => model.Tags)
+        </div>
+        <div class="display-field">
+            @Html.DisplayFor(model => model.Tags)
+        </div>
+        <div class="display-label">
+             @Html.DisplayNameFor(model => model.TypeName)
+        </div>
+        <div class="display-field">
+            @Html.DisplayFor(model => model.TypeName)
+        </div>
+        <div class="display-label">
+             @Html.DisplayNameFor(model => model.DueDate)
+        </div>
+        <div class="display-field">
+            @Html.DisplayFor(model => model.DueDate)
+        </div>
+    </fieldset>
+
+    @Html.HiddenFor(m => m.Id)
+    @Html.HiddenFor(m => m.Submitter)
+    @Html.HiddenFor(m => m.Title)
+    @Html.HiddenFor(m => m.PriorityText)
+    @Html.HiddenFor(m => m.Description)
+    @Html.HiddenFor(m => m.Tags)
+    @Html.HiddenFor(m => m.TypeName)
+    @Html.HiddenFor(m => m.DueDate)
+    
+    <p>
+        <input type="submit" value="Promote" /> |
+        @Html.ActionLink("Back to List", "Index")
+    </p>
+}

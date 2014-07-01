@@ -1,0 +1,7 @@
+﻿<IORConfig>
+  <BaseAddress>http://laserfiche.leankit.com/</BaseAddress>
+  <Username>IOR@laserfiche.com</Username>
+  <Password>L@53rf1ch3</Password>
+  <RequestType>application/json</RequestType>
+  <Environment>Live</Environment>
+</IORConfig>

@@ -1,0 +1,49 @@
+﻿@model IORPromoteTool.Models.PromoteUser
+
+@{
+    ViewBag.Title = "Delete User";
+}
+
+<h2>Delete User</h2>
+
+<h3>Are you sure you want to delete this?</h3>
+<fieldset>
+    <legend>IOR User</legend>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.Name)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.Name)
+    </div>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.FullName)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.FullName)
+    </div>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.Frequency)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.Frequency)
+    </div>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.LastPromote)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.LastPromote)
+    </div>
+
+</fieldset>
+
+@using (Html.BeginForm()) {
+    <p>
+        <input type="submit" value="Delete" /> |
+        @Html.ActionLink("Back to List", "Index")
+    </p>
+}
+

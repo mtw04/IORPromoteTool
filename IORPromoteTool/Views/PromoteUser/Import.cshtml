@@ -1,0 +1,45 @@
+﻿@model List<IORPromoteTool.Models.employee>
+
+@{
+    ViewBag.Title = "Import Index";
+}
+
+<h2>Import Managers List</h2>
+
+@using (Html.BeginForm()) {
+
+    <table class="cards">
+        <tr>
+            <th>
+                Name
+            </th>
+            <th>
+                Surname
+            </th>
+            <th>
+                Title
+            </th>
+        </tr>
+        @foreach (IORPromoteTool.Models.employee emp in Model)
+        {
+            <tr>
+                <td>
+                    @Html.DisplayFor(m => emp.emp_fname)
+                </td>
+                <td>
+                    @Html.DisplayFor(m => emp.emp_lname)
+                </td>
+                <td>
+                    @Html.DisplayFor(m => emp.emp_title)
+                </td>
+            </tr>
+        }
+    </table>
+
+    <p>
+        <input type="submit" value="Import" /> |
+        @Html.ActionLink("Back to List", "Index")
+    </p>
+    
+}
+

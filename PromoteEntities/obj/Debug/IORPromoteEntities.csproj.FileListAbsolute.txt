@@ -1,0 +1,5 @@
+C:\SVN\Infrastructure\Infrastructure Operations Request Form\IORPromoteTool\PromoteEntities\bin\Debug\PromoteEntities.dll
+C:\SVN\Infrastructure\Infrastructure Operations Request Form\IORPromoteTool\PromoteEntities\bin\Debug\PromoteEntities.pdb
+C:\SVN\Infrastructure\Infrastructure Operations Request Form\IORPromoteTool\PromoteEntities\bin\Debug\EntityFramework.dll
+C:\SVN\Infrastructure\Infrastructure Operations Request Form\IORPromoteTool\PromoteEntities\obj\Debug\PromoteEntities.dll
+C:\SVN\Infrastructure\Infrastructure Operations Request Form\IORPromoteTool\PromoteEntities\obj\Debug\PromoteEntities.pdb

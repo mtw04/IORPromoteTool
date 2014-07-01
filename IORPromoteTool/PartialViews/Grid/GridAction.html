@@ -1,0 +1,17 @@
+﻿<!-- Action buttons -->
+<div data-ng-switch on="indexType">
+    <div class="actions-bar" data-ng-switch-when="User">
+        <button class="btn btn-primary" data-ng-click="createMode()" data-ng-disabled="itemSelect"><i class="fa fa-plus"></i> Create User</button>
+        <button class="btn btn-warning" data-ng-click="editMode()" data-ng-disabled="!itemSelect"><i class="fa fa-pencil"></i> Edit User</button>
+        <button class="btn btn-danger" data-ng-click="deleteMode()" data-ng-disabled="!itemSelect"><i class="fa fa-trash-o"></i> Delete User</button>
+    </div>
+
+    <div class="actions-bar" data-ng-switch-when="Record">
+        <button class="btn btn-primary" data-ng-click="detailsMode()" data-ng-disabled="!itemSelect"><i class="fa fa-info-circle"></i> View Details</button>
+    </div>
+
+    <div class="actions-bar" data-ng-switch-when="Card">
+        <button class="btn btn-primary" data-ng-click="promoteMode()" data-ng-disabled="!itemSelect"><i class="fa fa-check"></i> Promote Card</button>
+        <button class="btn btn-danger" data-ng-show="isRejectAdmin" data-ng-click="rejectMode()" data-ng-disabled="!itemSelect"><i class="fa fa-trash-o"></i> Reject Card</button>
+    </div>
+</div>

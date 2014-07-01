@@ -1,0 +1,42 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+  <EntityContainerMapping StorageEntityContainer="EmployeeModelStoreContainer" CdmEntityContainer="EmployeeEntities">
+    <EntitySetMapping Name="employees">
+      <EntityTypeMapping TypeName="EmployeeModel.employee">
+        <MappingFragment StoreEntitySet="employees">
+          <ScalarProperty Name="emp_number" ColumnName="emp_number" />
+          <ScalarProperty Name="emp_fname" ColumnName="emp_fname" />
+          <ScalarProperty Name="emp_lname" ColumnName="emp_lname" />
+          <ScalarProperty Name="status" ColumnName="status" />
+          <ScalarProperty Name="parttime" ColumnName="parttime" />
+          <ScalarProperty Name="emp_nickname" ColumnName="emp_nickname" />
+          <ScalarProperty Name="emp_title" ColumnName="emp_title" />
+          <ScalarProperty Name="emp_sex" ColumnName="emp_sex" />
+          <ScalarProperty Name="nwuser" ColumnName="nwuser" />
+          <ScalarProperty Name="EmployeeNo" ColumnName="EmployeeNo" />
+          <ScalarProperty Name="birth_date" ColumnName="birth_date" />
+          <ScalarProperty Name="report_to" ColumnName="report_to" />
+          <ScalarProperty Name="reporttoID" ColumnName="reporttoID" />
+          <ScalarProperty Name="department" ColumnName="department" />
+          <ScalarProperty Name="emp_group" ColumnName="emp_group" />
+          <ScalarProperty Name="emp_unit" ColumnName="emp_unit" />
+          <ScalarProperty Name="location" ColumnName="location" />
+          <ScalarProperty Name="email" ColumnName="email" />
+          <ScalarProperty Name="hire_date" ColumnName="hire_date" />
+          <ScalarProperty Name="termination_date" ColumnName="termination_date" />
+          <ScalarProperty Name="phone_num" ColumnName="phone_num" />
+          <ScalarProperty Name="mobile_num" ColumnName="mobile_num" />
+          <ScalarProperty Name="IsManager" ColumnName="IsManager" />
+          <ScalarProperty Name="IsEmployed" ColumnName="IsEmployed" />
+          <ScalarProperty Name="LastYearVacationHour" ColumnName="LastYearVacationHour" />
+          <ScalarProperty Name="compday" ColumnName="compday" />
+          <ScalarProperty Name="LastYearSickHour" ColumnName="LastYearSickHour" />
+          <ScalarProperty Name="picture" ColumnName="picture" />
+          <ScalarProperty Name="original_hiredate" ColumnName="original_hiredate" />
+          <ScalarProperty Name="primary_location" ColumnName="primary_location" />
+          <ScalarProperty Name="consultant" ColumnName="consultant" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+  </EntityContainerMapping>
+</Mapping>

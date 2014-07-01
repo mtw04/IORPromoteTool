@@ -1,0 +1,73 @@
+﻿
+<form name="cardForm" class="ng-cloak">
+        
+    <fieldset>
+      
+        <legend>Request Details</legend>
+        
+        <div class="display-label">
+            <label for="Id">ID</label>
+        </div>
+        <div class="display-field">
+            {{ card.Id }}
+        </div>
+
+        <div class="display-label">
+            <label for="Submitter">Submitter</label>
+        </div>
+        <div class="display-field">
+            {{ card.Submitter }}
+        </div>
+
+        <div class="display-label">
+            <label for="Title">Title</label>
+        </div>
+        <div class="display-field">
+            {{ card.Title }}
+        </div>
+
+        <div class="display-label">
+            <label for="Description">Description</label>
+        </div>
+        <div class="display-field" ng-bind-html="card.Description"></div>
+
+        <div class="display-label">
+            <label for="Priority">Priority</label>
+        </div>
+        <div class="display-field">
+            {{ card.PriorityText }}
+        </div>
+
+        <div class="display-label">
+            <label for="Tags">System</label>
+        </div>
+        <div class="display-field">
+            {{ card.Tags }}
+        </div>
+
+        <div class="display-label">
+            <label for="Type">Type</label>
+        </div>
+        <div class="display-field">
+            {{ card.TypeName }}
+        </div>
+    
+        <div class="display-label">
+            <label for="DueDate">Due Date</label>
+        </div>
+        <div class="display-field">
+            {{ card.DueDate | date: 'MM/dd/yyyy' }}
+        </div>
+
+    </fieldset>
+
+    <div class="actions-bar">
+        <button class="btn btn-primary" data-ng-click="promote(card)"><i class="icon-confirm"></i>Promote</button>
+        <button class="btn btn-default" data-ng-click="returnToList()"><i class="icon-back"></i>Back</button>
+    </div>
+
+    <div data-ng-show="errorMessage">
+        {{errorMessage}}
+    </div>
+
+</form>

@@ -1,0 +1,16 @@
+﻿@model IORPromoteTool.Models.PromoteCardWrapper
+
+@{
+    ViewBag.Title = "IOR Promotion Complete";
+}
+
+<h2>IOR Promotion Complete</h2>
+
+<div class="page-text">
+    Thank you for promoting IOR <a href="@ViewBag.BaseUrl@Model.Card.Id">@Model.Card.Id</a>.
+    @*You are eligible to promote another IOR in <strong>@Model.PromoteUser.Frequency</strong> days.*@ 
+</div>
+
+<p>
+    @Html.ActionLink("Back to List", "Index")
+</p>

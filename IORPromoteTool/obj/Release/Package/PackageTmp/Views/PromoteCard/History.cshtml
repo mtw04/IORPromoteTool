@@ -1,0 +1,78 @@
+﻿@model IEnumerable<IORPromoteTool.Models.PromoteHistoryWrapper>
+
+@helper sortLink(string name, int id)
+{
+    @Html.ActionLink(name, "History", new { sortby = id, isasc = (id == ViewBag.sortBy ? !@ViewBag.isAsc : @ViewBag.isAsc).ToString().ToLower() })
+    if (id == ViewBag.sortBy){
+        <span class="arrow @(ViewBag.isAsc ? "up" : "down" )"></span>
+    }
+}
+
+@{
+    ViewBag.Title = "Promotion History";
+}
+
+<h2>Promotion History</h2>
+
+<table class="cards">
+    <tr>
+        <th>
+            @sortLink("Request Id", 1)
+        </th>
+        <th>
+            @sortLink("Promotion Date", 2)
+        </th>
+        <th>
+            @sortLink("Promoter", 3)
+        </th>
+        <th>
+            @sortLink("Submitter", 4)
+        </th>
+        <th>
+            @sortLink("Card Title", 5)
+        </th>
+        <th>
+            @sortLink("Current Lane", 6)
+        </th>
+    </tr>
+
+    @{int i = 1;}
+    @foreach (IORPromoteTool.Models.PromoteHistoryWrapper history in Model)
+    {
+        <tr class="@(i++ % 2 == 0 ? "highlighted" : "")">
+            <td>
+                <a href="@ViewBag.BaseUrl@history.CardId">
+                    @Html.DisplayFor(m => history.CardId)
+                </a>
+            </td>
+            <td>
+                @Html.DisplayFor(m => history.PromoteDate)
+            </td>
+            <td>
+                @Html.DisplayFor(m => history.Promoter)
+            </td>
+            <td>
+                @Html.DisplayFor(m => history.Submitter)
+            </td>
+            <td>
+                @Html.DisplayFor(m => history.Title)
+            </td>
+            <td>
+                @Html.DisplayFor(m => history.Lane)
+            </td>
+            
+        </tr>
+    }
+</table>
+
+<p>
+    @Html.ActionLink("To Promotion Tool", "Index")
+</p>
+
+<div class="pagination">
+    Page:
+    @for (int p = 1; p <= ViewBag.TotalPages; p++)
+    {
+        @Html.ActionLink(p.ToString(), "History", new { page = p, sortBy = ViewBag.SortBy, isAsc = ViewBag.IsAsc }, new { @class = p == ViewBag.CurrentPage ? "current" : "" })
+    }
+</div>

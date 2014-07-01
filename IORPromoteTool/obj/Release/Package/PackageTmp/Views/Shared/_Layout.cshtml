@@ -1,0 +1,64 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <title>@ViewBag.Title</title>
+
+    @Styles.Render("~/bundles/css")
+
+</head>
+<body ng-app="main" ng-controller="MainCtrl">
+
+    <header>
+        <!-- Collect the nav links, forms, and other content for toggling -->
+        <nav class="navbar navbar-inverse" role="navigation">
+            <div class="container-fluid">
+                <!-- Brand and toggle get grouped for better mobile display -->
+                <div class="navbar-header">
+                    <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
+                    <span class="sr-only">Toggle navigation</span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    </button>
+                    <a class="navbar-brand" href="#">Laserfiche</a>
+                </div>
+
+                <!-- Collect the nav links, forms, and other content for toggling -->
+                <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+                    <ul class="nav navbar-nav">
+                    <li><a href="#/CardIndex">Promotion Tool</a></li>
+                    <li><a href="#/RecordIndex">Promotion History</a></li>
+                    <li><a href="#/FAQ">FAQ</a></li>
+                    @{
+                        if (IORPromoteTool.Controllers.BaseController.ValidAdminRights()) // Display admin items only for admin
+                        {
+                            <li><a href="#/UserIndex">Admin Console</a></li>
+                        }
+                    }
+
+                    </ul>
+                </div><!-- /.navbar-collapse -->
+            </div><!-- /.container-fluid -->
+        </nav>
+    </header>
+    <section id="main">
+        @RenderBody()
+        <div ui-view></div>
+    </section>
+    <footer>
+        <div class="content-wrapper">
+            <div class="float-left">
+                <p style="color:white;">&copy; @DateTime.Now.Year - IOR Promotion Tool</p>
+            </div>
+        </div>
+    </footer>
+
+    @Scripts.Render("~/bundles/jquery")
+    @Scripts.Render("~/bundles/angular")
+    @Scripts.Render("~/bundles/angularScripts")
+    @Scripts.Render("~/bundles/modernizr")
+
+    @RenderSection("scripts", required: false)
+</body>
+</html>

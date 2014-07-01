@@ -1,0 +1,70 @@
+﻿<div class="page-header">User Details</div>
+        
+<div class="col-md-9">
+    <form class="form-horizontal" name="UserDetailsForm" id="UserDetailsForm" method="post">
+        <div class="form-group">
+            <label class="col-sm-3 control-label" for="UserName">User Name:</label>
+            <div class="col-sm-9">
+                <input class="form-control" id="UserName" data-ng-maxlength="1024" name="UserName" type="text" data-ng-model="item.Name" data-ng-required="true" auto-focus/>
+                <!--<span class="glyphicon glyphicon-ok form-control-feedback"></span>-->
+                <span class="label label-danger" data-ng-show="UserDetailsForm.UserName.$error.required && formError">Required!</span> 
+            </div>
+        </div>
+
+        <div class="form-group">
+            <label class="col-sm-3 control-label" for="UserFullName">Full name:</label>
+            <div class="col-sm-9">
+                <input class="form-control" id="UserFullName" data-ng-maxlength="1024" name="UserFullName" type="text" data-ng-model="item.FullName" data-ng-required="true" />
+                <span class="label label-danger" data-ng-show="UserDetailsForm.UserFullName.$error.required && formError">Required!</span> 
+            </div>
+        </div>
+
+        <div class="form-group">
+            <label class="col-sm-3 control-label" for="UserFrequency">Promotion Frequency:</label>
+            <div class="col-sm-9">
+                <select class="form-control" id="UserFrequency" name="UserFrequency" data-ng-model="item.Frequency" data-ng-options="option.Frequency as option.Frequency for option in options"></select> <!--ng-mouseover="getOptions()"-->
+                <!--<span class="label label-danger" data-ng-show="UserDetailsForm.UserFrequency.$error.required && formError">Required!</span>--> 
+            </div>
+        </div>
+
+        <div class="form-group">
+            <label class="col-sm-3 control-label" for="UserLastPromote">Last Promotion Date:</label>
+            <div class="col-sm-9">
+                 <p class="input-group">
+                    <input class="form-control" id="UserLastPromote" name="UserLastPromote" type="text" data-ng-model="item.LastPromote" is-open="opened" datepicker-popup/> <!-- datepicker-popup="dd/MM/yyyy"/> -->
+                    <span class="input-group-btn">
+                    <button type="button" class="btn btn-default" data-ng-click="open($event)"><i class="fa fa-calendar"></i></button>
+                    </span>
+                </p>
+                <!--<span class="label label-danger" data-ng-show="UserDetailsForm.UserLastPromote.$error.required && formError">Required!</span>--> 
+            </div>
+        </div>
+
+        <hr />
+
+        <div class="form-group" data-ng-show="formError">
+            <div class="col-sm-3">
+                <label class="label label-danger" for="UserError">{{formError}}</label>
+            </div>
+        </div>
+
+        <div data-ng-if="!isDelete">
+            <div class="actions-bar">
+                <button type="submit" class="btn btn-success" data-ng-click="save(item)" data-ng-disabled="disabledButton"><i class="fa fa-save"></i> Save</button>
+                <button type="button" class="btn btn-default" data-ng-click="returnToList()"><i class="fa fa-reply"></i> Back</button>
+            </div>
+        </div>
+        <div data-ng-if="isDelete">
+            <div class="actions-bar">
+                <button type="button" class="btn btn-danger" data-ng-click="delete(item)" data-ng-disabled="disabledButton"><i class="fa fa-trash-o"></i> Confirm Delete</button>
+                <button type="button" class="btn btn-default" data-ng-click="returnToList()"><i class="fa fa-reply"></i> Back</button>
+            </div>
+        </div>
+        
+    </form>
+</div>
+
+
+
+
+

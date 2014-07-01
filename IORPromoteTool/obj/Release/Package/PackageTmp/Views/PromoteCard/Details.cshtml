@@ -1,0 +1,70 @@
+﻿@model LeankitLibrary.Entities.Card
+
+@{
+    ViewBag.Title = "Request Details";
+}
+
+<h2>Request Details</h2>
+
+<fieldset>
+    <legend>Request</legend>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(m => m.Id)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(m => m.Id)
+    </div>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(m => m.Submitter)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(m => m.Submitter)
+    </div>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(m => m.Title)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(m => m.Title)
+    </div>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(m => m.Description)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(m => m.Description)
+    </div>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(m => m.PriorityText)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(m => m.PriorityText)
+    </div>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(m => m.Tags)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(m => m.Tags)
+    </div>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(m => m.TypeName)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(m => m.TypeName)
+    </div>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(m => m.DueDate)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(m => m.DueDate)
+    </div>
+</fieldset>
+<p>
+    @Html.ActionLink("Back to List", "Index")
+</p>

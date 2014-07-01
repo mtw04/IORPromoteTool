@@ -1,0 +1,70 @@
+﻿<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8" />
+        
+        @Styles.Render("~/bundles/css")
+
+    </head>
+    <body ng-app="main" ng-controller="MainCtrl">
+        <div id="wrap">
+            <header id="header">
+                <!-- Collect the nav links, forms, and other content for toggling -->
+                <nav class="navbar navbar-inverse" role="navigation">
+                    <div class="container">
+                        <!-- Brand and toggle get grouped for better mobile display -->
+                        <div class="navbar-header">
+                            <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
+                            <span class="sr-only">Toggle navigation</span>
+                            <span class="icon-bar"></span>
+                            <span class="icon-bar"></span>
+                            <span class="icon-bar"></span>
+                            </button>
+                            <a class="navbar-brand" href="#">Laserfiche</a>
+                        </div>
+
+                        <!-- Collect the nav links, forms, and other content for toggling -->
+                        <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1" ng-controller="AccountCtrl">
+                            <ul class="nav navbar-nav">
+                                <li ng-class="{ active: isActive('/CardIndex') }"><a href="#/CardIndex">Promotion Tool</a></li>
+                                <li ng-class="{ active: isActive('/RecordIndex') }"><a href="#/RecordIndex">Promotion History</a></li>
+                                <li ng-class="{ active: isActive('/FAQ') }"><a href="#/FAQ">FAQ</a></li>
+                                <li ng-show="isUserAdmin" ng-class="{ active: isActive('/UserIndex') }"><a href="#/UserIndex">Admin Console</a></li>
+                                <li ng-class="{ active: isActive('/Charts') }"><a href="#/Chart">Chart</a></li>
+                            </ul>
+
+                        </div><!-- /.navbar-collapse -->
+                    </div><!-- /.container-fluid -->
+                </nav>
+            </header>
+          
+            <div id="main" class="container">
+                <div ui-view>
+                    @RenderBody()
+                </div>
+            </div>
+        </div>
+
+        <footer id="footer" ng-controller="MainCtrl">
+            <div class="container">
+                <ul class="list-inline pull-left">
+                    <li class="footerLinks"><a href="https://secure1.laserfiche.com/forms/ior/" target="_blank">IOR Form</a></li>
+                    <li class="footerLinks"><a href="https://laserfiche.leankit.com/Boards/View/39048680" target="_blank">Kanban Board</a></li>
+                    <li class="footerLinks" ng-click="open()"><a href="">About</a></li>
+                </ul>
+                <p class="footerText float-right">&copy; @DateTime.Now.Year Laserfiche. All Rights Reserved.</p>
+            </div>
+        </footer>
+       
+        @Scripts.Render("~/bundles/jquery")
+        @Scripts.Render("~/bundles/bootstrap")
+        @Scripts.Render("~/bundles/d3")
+        @Scripts.Render("~/bundles/angular")
+        @Scripts.Render("~/bundles/angularScripts")
+        @Scripts.Render("~/bundles/modernizr")
+        @RenderSection("scripts", required: false)
+           
+        <script type="text/javascript" src="https://www.google.com/jsapi"></script>
+         
+    </body>
+</html>

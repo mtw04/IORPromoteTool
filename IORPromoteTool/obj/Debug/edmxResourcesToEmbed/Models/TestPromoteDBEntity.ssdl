@@ -1,0 +1,76 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="TestPromoteDBModel.Store" Alias="Self" Provider="System.Data.SqlClient" ProviderManifestToken="2008" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+  <EntityContainer Name="TestPromoteDBModelStoreContainer">
+    <EntitySet Name="IORRequests" EntityType="TestPromoteDBModel.Store.IORRequests" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="IORSettings" EntityType="TestPromoteDBModel.Store.IORSettings" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="PromoteFrequency" EntityType="TestPromoteDBModel.Store.PromoteFrequency" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="PromoteRecords" EntityType="TestPromoteDBModel.Store.PromoteRecords" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="PromoteUsers" EntityType="TestPromoteDBModel.Store.PromoteUsers" store:Type="Tables" Schema="dbo" />
+  </EntityContainer>
+  <EntityType Name="IORRequests">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+    <Property Name="IOR_ID" Type="int" Nullable="false" />
+    <Property Name="Kanban_ID" Type="nvarchar" MaxLength="100" />
+    <Property Name="Submitter" Type="nvarchar" Nullable="false" MaxLength="100" />
+    <Property Name="Department" Type="nvarchar" Nullable="false" MaxLength="100" />
+    <Property Name="Request_Title" Type="nvarchar" Nullable="false" MaxLength="255" />
+    <Property Name="Request_Type" Type="nvarchar" Nullable="false" MaxLength="100" />
+    <Property Name="Request_System" Type="nvarchar" Nullable="false" MaxLength="100" />
+    <Property Name="Request_Category" Type="nvarchar" Nullable="false" MaxLength="100" />
+    <Property Name="Request_Priority" Type="nvarchar" Nullable="false" MaxLength="100" />
+    <Property Name="Request_Status" Type="nvarchar" MaxLength="100" />
+    <Property Name="Request_File_Date" Type="date" Nullable="false" />
+    <Property Name="Request_Approved_Date" Type="date" Nullable="false" />
+    <Property Name="Request_UAT_Date" Type="date" />
+    <Property Name="Request_End_Date" Type="date" />
+  </EntityType>
+  <EntityType Name="IORSettings">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+    <Property Name="BoardId" Type="nvarchar" Nullable="false" MaxLength="100" />
+    <Property Name="TempPath" Type="nvarchar" Nullable="false" MaxLength="100" />
+    <Property Name="PromoteLane" Type="nvarchar" Nullable="false" MaxLength="100" />
+    <Property Name="LogInfo" Type="bit" Nullable="false" />
+    <Property Name="LogDetails" Type="bit" Nullable="false" />
+    <Property Name="PromoteFrequency" Type="int" Nullable="false" />
+    <Property Name="Environment" Type="nvarchar" Nullable="false" MaxLength="100" />
+  </EntityType>
+  <EntityType Name="PromoteFrequency">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+    <Property Name="Frequency" Type="int" Nullable="false" />
+  </EntityType>
+  <EntityType Name="PromoteRecords">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+    <Property Name="Promoter" Type="nvarchar" Nullable="false" MaxLength="100" />
+    <Property Name="PromoteDate" Type="date" Nullable="false" />
+    <Property Name="Title" Type="nvarchar" Nullable="false" MaxLength="100" />
+    <Property Name="Description" Type="nvarchar(max)" />
+    <Property Name="Type" Type="nvarchar" Nullable="false" MaxLength="100" />
+    <Property Name="Priority" Type="nvarchar" Nullable="false" MaxLength="100" />
+    <Property Name="Tags" Type="nvarchar" MaxLength="100" />
+    <Property Name="Deadline" Type="nvarchar" MaxLength="100" />
+    <Property Name="CardId" Type="int" Nullable="false" />
+    <Property Name="Submitter" Type="nvarchar" MaxLength="100" />
+  </EntityType>
+  <EntityType Name="PromoteUsers">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+    <Property Name="Name" Type="nvarchar" Nullable="false" MaxLength="100" />
+    <Property Name="FullName" Type="nvarchar" Nullable="false" MaxLength="100" />
+    <Property Name="Frequency" Type="int" Nullable="false" />
+    <Property Name="LastPromote" Type="date" />
+  </EntityType>
+</Schema>

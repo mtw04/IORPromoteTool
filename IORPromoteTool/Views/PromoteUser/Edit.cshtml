@@ -1,0 +1,71 @@
+﻿@model IORPromoteTool.Models.PromoteUser
+
+@{
+    ViewBag.Title = "Edit User";
+}
+
+<h2>Edit User</h2>
+
+@using (Html.BeginForm()) {
+    @Html.ValidationSummary(true)
+
+    <fieldset>
+        <legend>IOR User</legend>
+
+        @Html.HiddenFor(model => model.Id)
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.Name)
+        </div>
+        <div class="editor-field">
+            @Html.DropDownListFor(m => m.Name, (IEnumerable<SelectListItem>)ViewBag.PromoteList, String.Empty) <!-- Refactor to remove ViewBag -->
+            @*@Html.EditorFor(model => model.Name)*@
+            @Html.ValidationMessageFor(model => model.Name)
+        </div>
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.FullName)
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.FullName)
+            @Html.ValidationMessageFor(model => model.FullName)
+        </div>
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.Frequency)
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.Frequency)
+            @Html.ValidationMessageFor(model => model.Frequency)
+        </div>
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.LastPromote)
+        </div>
+        <div class="editor-field">
+            @Html.TextBoxFor(model => model.LastPromote, new { @class="datepicker" })
+            @Html.ValidationMessageFor(model => model.LastPromote)
+        </div>
+
+        <p>
+            <input type="submit" value="Save" />
+        </p>
+    </fieldset>
+}
+
+<div>
+    @Html.ActionLink("Back to List", "Index")
+</div>
+
+@section Scripts {
+    @Scripts.Render("~/bundles/jqueryval")
+    <script type="text/javascript">
+        $(".datepicker").datepicker();
+    </script>
+}
+
+@*<script type="text/javascript">
+    $(document).ready(function () {
+        $(".datepicker").datepicker({ dateFormat: 'dd/mm/yy' });
+    });
+</script>*@

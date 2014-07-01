@@ -1,0 +1,16 @@
+﻿<div class="grid-menu-bar">
+    <div class="tooltip-container prev-tooltip">
+        <button hover-tooltip="prevTooltip" class="btn title-button clickable" data-ng-disabled="pageController.currentIndex == 0" data-ng-click="pageController.GoPrevPage();"><i class="page-left-icon"></i></button>
+        <tooltip placement="top" tooltip="prevTooltip">Previous page</tooltip>
+    </div>
+    <div class="tooltip-container">
+        <button type="button" hover-tooltip="nextTooltip" class="btn title-button clickable" data-ng-disabled="pageController.displayIndex == pageController.numPages" data-ng-click="pageController.GoNextPage();"><i class="page-right-icon"></i></button>
+        <tooltip placement="top" tooltip="nextTooltip">Next page</tooltip>
+    </div>
+    <input class="pagination-input" data-ng-model="pageController.displayIndex" data-ng-change="pageController.UpdatePage()"/> of {{pageController.numPages}}
+    <span data-ng-show="pageController.numItems > 0" style="margin-left: 10px" class="deemphasize" data-ng-bind="searchIndicies"></span>
+    <div class="input-group float-right" style="width: 200px;">
+        <input type="text" class="form-control" placeholder="Search" data-ng-model="query">
+        <span class="input-group-addon"><i class="fa fa-search"></i></span>
+    </div>
+</div>

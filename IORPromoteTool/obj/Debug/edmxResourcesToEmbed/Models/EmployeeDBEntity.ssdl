@@ -1,0 +1,42 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="EmployeeModel.Store" Alias="Self" Provider="System.Data.SqlClient" ProviderManifestToken="2008" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+  <EntityContainer Name="EmployeeModelStoreContainer">
+    <EntitySet Name="employees" EntityType="EmployeeModel.Store.employees" store:Type="Tables" Schema="dbo" />
+  </EntityContainer>
+  <EntityType Name="employees">
+    <Key>
+      <PropertyRef Name="emp_number" />
+    </Key>
+    <Property Name="emp_number" Type="smallint" Nullable="false" StoreGeneratedPattern="Identity" />
+    <Property Name="emp_fname" Type="nvarchar" Nullable="false" MaxLength="25" />
+    <Property Name="emp_lname" Type="nvarchar" Nullable="false" MaxLength="50" />
+    <Property Name="status" Type="nvarchar" MaxLength="2" />
+    <Property Name="parttime" Type="bit" />
+    <Property Name="emp_nickname" Type="nvarchar" MaxLength="25" />
+    <Property Name="emp_title" Type="nvarchar" MaxLength="50" />
+    <Property Name="emp_sex" Type="char" MaxLength="1" />
+    <Property Name="nwuser" Type="nvarchar" MaxLength="20" />
+    <Property Name="EmployeeNo" Type="int" />
+    <Property Name="birth_date" Type="smalldatetime" />
+    <Property Name="report_to" Type="nvarchar" MaxLength="20" />
+    <Property Name="reporttoID" Type="smallint" />
+    <Property Name="department" Type="nvarchar" MaxLength="50" />
+    <Property Name="emp_group" Type="nvarchar" MaxLength="50" />
+    <Property Name="emp_unit" Type="nvarchar" MaxLength="50" />
+    <Property Name="location" Type="nvarchar" MaxLength="50" />
+    <Property Name="email" Type="nvarchar" MaxLength="40" />
+    <Property Name="hire_date" Type="smalldatetime" />
+    <Property Name="termination_date" Type="smalldatetime" />
+    <Property Name="phone_num" Type="nvarchar" MaxLength="20" />
+    <Property Name="mobile_num" Type="nvarchar" MaxLength="20" />
+    <Property Name="IsManager" Type="bit" Nullable="false" />
+    <Property Name="IsEmployed" Type="bit" Nullable="false" />
+    <Property Name="LastYearVacationHour" Type="float" />
+    <Property Name="compday" Type="int" />
+    <Property Name="LastYearSickHour" Type="float" />
+    <Property Name="picture" Type="image" />
+    <Property Name="original_hiredate" Type="datetime" />
+    <Property Name="primary_location" Type="nvarchar" MaxLength="50" />
+    <Property Name="consultant" Type="bit" />
+  </EntityType>
+</Schema>

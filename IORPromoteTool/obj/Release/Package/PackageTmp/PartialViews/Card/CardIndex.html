@@ -1,0 +1,13 @@
+﻿<div ng-show="$state.current.name=='card'">
+
+    <card-grid data="cards" on-select-item="onSelectItem">
+    </card-grid>
+
+    <div class="actions-bar">
+        <button class="btn btn-primary" data-ng-click="promoteMode()">Promote Card</button>
+    </div>
+</div>
+
+<div ui-view>
+    <!-- Child State in here -->
+</div> 

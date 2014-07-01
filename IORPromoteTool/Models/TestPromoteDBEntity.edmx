@@ -1,0 +1,257 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+  <!-- EF Runtime content -->
+  <edmx:Runtime>
+    <!-- SSDL content -->
+    <edmx:StorageModels>
+    <Schema Namespace="TestPromoteDBModel.Store" Alias="Self" Provider="System.Data.SqlClient" ProviderManifestToken="2008" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+        <EntityContainer Name="TestPromoteDBModelStoreContainer">
+          <EntitySet Name="IORRequests" EntityType="TestPromoteDBModel.Store.IORRequests" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="IORSettings" EntityType="TestPromoteDBModel.Store.IORSettings" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="PromoteFrequency" EntityType="TestPromoteDBModel.Store.PromoteFrequency" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="PromoteRecords" EntityType="TestPromoteDBModel.Store.PromoteRecords" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="PromoteUsers" EntityType="TestPromoteDBModel.Store.PromoteUsers" store:Type="Tables" Schema="dbo" />
+        </EntityContainer>
+        <EntityType Name="IORRequests">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+          <Property Name="IOR_ID" Type="int" Nullable="false" />
+          <Property Name="Kanban_ID" Type="nvarchar" MaxLength="100" />
+          <Property Name="Submitter" Type="nvarchar" Nullable="false" MaxLength="100" />
+          <Property Name="Department" Type="nvarchar" Nullable="false" MaxLength="100" />
+          <Property Name="Request_Title" Type="nvarchar" Nullable="false" MaxLength="255" />
+          <Property Name="Request_Type" Type="nvarchar" Nullable="false" MaxLength="100" />
+          <Property Name="Request_System" Type="nvarchar" Nullable="false" MaxLength="100" />
+          <Property Name="Request_Category" Type="nvarchar" Nullable="false" MaxLength="100" />
+          <Property Name="Request_Priority" Type="nvarchar" Nullable="false" MaxLength="100" />
+          <Property Name="Request_Status" Type="nvarchar" MaxLength="100" />
+          <Property Name="Request_File_Date" Type="date" Nullable="false" />
+          <Property Name="Request_Approved_Date" Type="date" Nullable="false" />
+          <Property Name="Request_UAT_Date" Type="date" />
+          <Property Name="Request_End_Date" Type="date" />
+        </EntityType>
+        <EntityType Name="IORSettings">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+          <Property Name="BoardId" Type="nvarchar" Nullable="false" MaxLength="100" />
+          <Property Name="TempPath" Type="nvarchar" Nullable="false" MaxLength="100" />
+          <Property Name="PromoteLane" Type="nvarchar" Nullable="false" MaxLength="100" />
+          <Property Name="LogInfo" Type="bit" Nullable="false" />
+          <Property Name="LogDetails" Type="bit" Nullable="false" />
+          <Property Name="PromoteFrequency" Type="int" Nullable="false" />
+          <Property Name="Environment" Type="nvarchar" Nullable="false" MaxLength="100" />
+        </EntityType>
+        <EntityType Name="PromoteFrequency">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+          <Property Name="Frequency" Type="int" Nullable="false" />
+        </EntityType>
+        <EntityType Name="PromoteRecords">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+          <Property Name="Promoter" Type="nvarchar" Nullable="false" MaxLength="100" />
+          <Property Name="PromoteDate" Type="date" Nullable="false" />
+          <Property Name="Title" Type="nvarchar" Nullable="false" MaxLength="100" />
+          <Property Name="Description" Type="nvarchar(max)" />
+          <Property Name="Type" Type="nvarchar" Nullable="false" MaxLength="100" />
+          <Property Name="Priority" Type="nvarchar" Nullable="false" MaxLength="100" />
+          <Property Name="Tags" Type="nvarchar" MaxLength="100" />
+          <Property Name="Deadline" Type="nvarchar" MaxLength="100" />
+          <Property Name="CardId" Type="int" Nullable="false" />
+          <Property Name="Submitter" Type="nvarchar" MaxLength="100" />
+        </EntityType>
+        <EntityType Name="PromoteUsers">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+          <Property Name="Name" Type="nvarchar" Nullable="false" MaxLength="100" />
+          <Property Name="FullName" Type="nvarchar" Nullable="false" MaxLength="100" />
+          <Property Name="Frequency" Type="int" Nullable="false" />
+          <Property Name="LastPromote" Type="date" />
+        </EntityType>
+      </Schema></edmx:StorageModels>
+    <!-- CSDL content -->
+    <edmx:ConceptualModels>
+      <Schema Namespace="TestPromoteDBModel" Alias="Self" p1:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:p1="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+        <EntityContainer Name="TestPromoteEntities" p1:LazyLoadingEnabled="true">
+          <EntitySet Name="IORSettings" EntityType="TestPromoteDBModel.IORSetting" />
+          <EntitySet Name="PromoteRecords" EntityType="TestPromoteDBModel.PromoteRecord" />
+          <EntitySet Name="PromoteUsers" EntityType="TestPromoteDBModel.PromoteUser" />
+          <EntitySet Name="PromoteFrequencies" EntityType="TestPromoteDBModel.PromoteFrequency" />
+          <EntitySet Name="IORRequests" EntityType="TestPromoteDBModel.IORRequest" />
+        </EntityContainer>
+        <EntityType Name="IORSetting">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Int32" Nullable="false" p1:StoreGeneratedPattern="Identity" />
+          <Property Name="BoardId" Type="String" Nullable="false" MaxLength="100" Unicode="true" FixedLength="false" />
+          <Property Name="TempPath" Type="String" Nullable="false" MaxLength="100" Unicode="true" FixedLength="false" />
+          <Property Name="PromoteLane" Type="String" Nullable="false" MaxLength="100" Unicode="true" FixedLength="false" />
+          <Property Name="LogInfo" Type="Boolean" Nullable="false" />
+          <Property Name="LogDetails" Type="Boolean" Nullable="false" />
+          <Property Name="PromoteFrequency" Type="Int32" Nullable="false" />
+          <Property Type="String" Name="Environment" Nullable="false" MaxLength="100" FixedLength="false" Unicode="true" />
+        </EntityType>
+        <EntityType Name="PromoteRecord">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Int32" Nullable="false" p1:StoreGeneratedPattern="Identity" />
+          <Property Name="Promoter" Type="String" Nullable="false" MaxLength="100" Unicode="true" FixedLength="false" />
+          <Property Name="PromoteDate" Type="DateTime" Nullable="false" Precision="0" />
+          <Property Name="Title" Type="String" Nullable="false" MaxLength="100" Unicode="true" FixedLength="false" />
+          <Property Name="Description" Type="String" MaxLength="Max" Unicode="true" FixedLength="false" />
+          <Property Name="Type" Type="String" Nullable="false" MaxLength="100" Unicode="true" FixedLength="false" />
+          <Property Name="Priority" Type="String" Nullable="false" MaxLength="100" Unicode="true" FixedLength="false" />
+          <Property Name="Tags" Type="String" MaxLength="100" Unicode="true" FixedLength="false" />
+          <Property Name="Deadline" Type="String" MaxLength="100" Unicode="true" FixedLength="false" />
+          <Property Name="CardId" Type="Int32" Nullable="false" />
+          <Property Name="Submitter" Type="String" MaxLength="100" Unicode="true" FixedLength="false" />
+        </EntityType>
+        <EntityType Name="PromoteUser">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Int32" Nullable="false" p1:StoreGeneratedPattern="Identity" />
+          <Property Name="Name" Type="String" Nullable="false" MaxLength="100" Unicode="true" FixedLength="false" />
+          <Property Name="FullName" Type="String" Nullable="false" MaxLength="100" Unicode="true" FixedLength="false" />
+          <Property Name="Frequency" Type="Int32" Nullable="false" />
+          <Property Name="LastPromote" Type="DateTime" Precision="0" />
+        </EntityType>
+        <EntityType Name="PromoteFrequency">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Type="Int32" Name="Id" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Type="Int32" Name="Frequency" Nullable="false" />
+        </EntityType>
+        <EntityType Name="IORRequest">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Type="Int32" Name="Id" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Type="Int32" Name="IOR_ID" Nullable="false" />
+          <Property Type="String" Name="Kanban_ID" MaxLength="100" FixedLength="false" Unicode="true" />
+          <Property Type="String" Name="Submitter" Nullable="false" MaxLength="100" FixedLength="false" Unicode="true" />
+          <Property Type="String" Name="Department" Nullable="false" MaxLength="100" FixedLength="false" Unicode="true" />
+          <Property Type="String" Name="Request_Title" Nullable="false" MaxLength="255" FixedLength="false" Unicode="true" />
+          <Property Type="String" Name="Request_Type" Nullable="false" MaxLength="100" FixedLength="false" Unicode="true" />
+          <Property Type="String" Name="Request_System" Nullable="false" MaxLength="100" FixedLength="false" Unicode="true" />
+          <Property Type="String" Name="Request_Category" Nullable="false" MaxLength="100" FixedLength="false" Unicode="true" />
+          <Property Type="String" Name="Request_Priority" Nullable="false" MaxLength="100" FixedLength="false" Unicode="true" />
+          <Property Type="String" Name="Request_Status" MaxLength="100" FixedLength="false" Unicode="true" />
+          <Property Type="DateTime" Name="Request_File_Date" Nullable="false" Precision="0" />
+          <Property Type="DateTime" Name="Request_Approved_Date" Nullable="false" Precision="0" />
+          <Property Type="DateTime" Name="Request_UAT_Date" Precision="0" />
+          <Property Type="DateTime" Name="Request_End_Date" Precision="0" />
+        </EntityType>
+      </Schema>
+    </edmx:ConceptualModels>
+    <!-- C-S mapping content -->
+    <edmx:Mappings>
+      <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+        <EntityContainerMapping StorageEntityContainer="TestPromoteDBModelStoreContainer" CdmEntityContainer="TestPromoteEntities">
+          <EntitySetMapping Name="IORSettings">
+            <EntityTypeMapping TypeName="TestPromoteDBModel.IORSetting">
+              <MappingFragment StoreEntitySet="IORSettings">
+                <ScalarProperty Name="Environment" ColumnName="Environment" />
+                <ScalarProperty Name="Id" ColumnName="Id" />
+                <ScalarProperty Name="BoardId" ColumnName="BoardId" />
+                <ScalarProperty Name="TempPath" ColumnName="TempPath" />
+                <ScalarProperty Name="PromoteLane" ColumnName="PromoteLane" />
+                <ScalarProperty Name="LogInfo" ColumnName="LogInfo" />
+                <ScalarProperty Name="LogDetails" ColumnName="LogDetails" />
+                <ScalarProperty Name="PromoteFrequency" ColumnName="PromoteFrequency" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="PromoteRecords">
+            <EntityTypeMapping TypeName="TestPromoteDBModel.PromoteRecord">
+              <MappingFragment StoreEntitySet="PromoteRecords">
+                <ScalarProperty Name="Id" ColumnName="Id" />
+                <ScalarProperty Name="Promoter" ColumnName="Promoter" />
+                <ScalarProperty Name="PromoteDate" ColumnName="PromoteDate" />
+                <ScalarProperty Name="Title" ColumnName="Title" />
+                <ScalarProperty Name="Description" ColumnName="Description" />
+                <ScalarProperty Name="Type" ColumnName="Type" />
+                <ScalarProperty Name="Priority" ColumnName="Priority" />
+                <ScalarProperty Name="Tags" ColumnName="Tags" />
+                <ScalarProperty Name="Deadline" ColumnName="Deadline" />
+                <ScalarProperty Name="CardId" ColumnName="CardId" />
+                <ScalarProperty Name="Submitter" ColumnName="Submitter" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="PromoteUsers">
+            <EntityTypeMapping TypeName="TestPromoteDBModel.PromoteUser">
+              <MappingFragment StoreEntitySet="PromoteUsers">
+                <ScalarProperty Name="Id" ColumnName="Id" />
+                <ScalarProperty Name="Name" ColumnName="Name" />
+                <ScalarProperty Name="FullName" ColumnName="FullName" />
+                <ScalarProperty Name="Frequency" ColumnName="Frequency" />
+                <ScalarProperty Name="LastPromote" ColumnName="LastPromote" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="PromoteFrequencies">
+            <EntityTypeMapping TypeName="TestPromoteDBModel.PromoteFrequency">
+              <MappingFragment StoreEntitySet="PromoteFrequency">
+                <ScalarProperty Name="Frequency" ColumnName="Frequency" />
+                <ScalarProperty Name="Id" ColumnName="Id" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="IORRequests">
+            <EntityTypeMapping TypeName="TestPromoteDBModel.IORRequest">
+              <MappingFragment StoreEntitySet="IORRequests">
+                <ScalarProperty Name="Request_End_Date" ColumnName="Request_End_Date" />
+                <ScalarProperty Name="Request_UAT_Date" ColumnName="Request_UAT_Date" />
+                <ScalarProperty Name="Request_Approved_Date" ColumnName="Request_Approved_Date" />
+                <ScalarProperty Name="Request_File_Date" ColumnName="Request_File_Date" />
+                <ScalarProperty Name="Request_Status" ColumnName="Request_Status" />
+                <ScalarProperty Name="Request_Priority" ColumnName="Request_Priority" />
+                <ScalarProperty Name="Request_Category" ColumnName="Request_Category" />
+                <ScalarProperty Name="Request_System" ColumnName="Request_System" />
+                <ScalarProperty Name="Request_Type" ColumnName="Request_Type" />
+                <ScalarProperty Name="Request_Title" ColumnName="Request_Title" />
+                <ScalarProperty Name="Department" ColumnName="Department" />
+                <ScalarProperty Name="Submitter" ColumnName="Submitter" />
+                <ScalarProperty Name="Kanban_ID" ColumnName="Kanban_ID" />
+                <ScalarProperty Name="IOR_ID" ColumnName="IOR_ID" />
+                <ScalarProperty Name="Id" ColumnName="Id" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+        </EntityContainerMapping>
+      </Mapping>
+    </edmx:Mappings>
+  </edmx:Runtime>
+  <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <Connection>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="MetadataArtifactProcessing" Value="EmbedInOutputAssembly" />
+      </DesignerInfoPropertySet>
+    </Connection>
+    <Options>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="ValidateOnBuild" Value="true" />
+        <DesignerProperty Name="EnablePluralization" Value="True" />
+        <DesignerProperty Name="IncludeForeignKeysInModel" Value="True" />
+        <DesignerProperty Name="CodeGenerationStrategy" Value="None" />
+      </DesignerInfoPropertySet>
+    </Options>
+    <!-- Diagram content (shape and connector positions) -->
+    <Diagrams></Diagrams>
+  </Designer>
+</edmx:Edmx>

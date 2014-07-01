@@ -1,0 +1,76 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="TestPromoteDBModel" Alias="Self" p1:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:p1="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+  <EntityContainer Name="TestPromoteEntities" p1:LazyLoadingEnabled="true">
+    <EntitySet Name="IORSettings" EntityType="TestPromoteDBModel.IORSetting" />
+    <EntitySet Name="PromoteRecords" EntityType="TestPromoteDBModel.PromoteRecord" />
+    <EntitySet Name="PromoteUsers" EntityType="TestPromoteDBModel.PromoteUser" />
+    <EntitySet Name="PromoteFrequencies" EntityType="TestPromoteDBModel.PromoteFrequency" />
+    <EntitySet Name="IORRequests" EntityType="TestPromoteDBModel.IORRequest" />
+  </EntityContainer>
+  <EntityType Name="IORSetting">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="Int32" Nullable="false" p1:StoreGeneratedPattern="Identity" />
+    <Property Name="BoardId" Type="String" Nullable="false" MaxLength="100" Unicode="true" FixedLength="false" />
+    <Property Name="TempPath" Type="String" Nullable="false" MaxLength="100" Unicode="true" FixedLength="false" />
+    <Property Name="PromoteLane" Type="String" Nullable="false" MaxLength="100" Unicode="true" FixedLength="false" />
+    <Property Name="LogInfo" Type="Boolean" Nullable="false" />
+    <Property Name="LogDetails" Type="Boolean" Nullable="false" />
+    <Property Name="PromoteFrequency" Type="Int32" Nullable="false" />
+    <Property Type="String" Name="Environment" Nullable="false" MaxLength="100" FixedLength="false" Unicode="true" />
+  </EntityType>
+  <EntityType Name="PromoteRecord">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="Int32" Nullable="false" p1:StoreGeneratedPattern="Identity" />
+    <Property Name="Promoter" Type="String" Nullable="false" MaxLength="100" Unicode="true" FixedLength="false" />
+    <Property Name="PromoteDate" Type="DateTime" Nullable="false" Precision="0" />
+    <Property Name="Title" Type="String" Nullable="false" MaxLength="100" Unicode="true" FixedLength="false" />
+    <Property Name="Description" Type="String" MaxLength="Max" Unicode="true" FixedLength="false" />
+    <Property Name="Type" Type="String" Nullable="false" MaxLength="100" Unicode="true" FixedLength="false" />
+    <Property Name="Priority" Type="String" Nullable="false" MaxLength="100" Unicode="true" FixedLength="false" />
+    <Property Name="Tags" Type="String" MaxLength="100" Unicode="true" FixedLength="false" />
+    <Property Name="Deadline" Type="String" MaxLength="100" Unicode="true" FixedLength="false" />
+    <Property Name="CardId" Type="Int32" Nullable="false" />
+    <Property Name="Submitter" Type="String" MaxLength="100" Unicode="true" FixedLength="false" />
+  </EntityType>
+  <EntityType Name="PromoteUser">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="Int32" Nullable="false" p1:StoreGeneratedPattern="Identity" />
+    <Property Name="Name" Type="String" Nullable="false" MaxLength="100" Unicode="true" FixedLength="false" />
+    <Property Name="FullName" Type="String" Nullable="false" MaxLength="100" Unicode="true" FixedLength="false" />
+    <Property Name="Frequency" Type="Int32" Nullable="false" />
+    <Property Name="LastPromote" Type="DateTime" Precision="0" />
+  </EntityType>
+  <EntityType Name="PromoteFrequency">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Type="Int32" Name="Id" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Type="Int32" Name="Frequency" Nullable="false" />
+  </EntityType>
+  <EntityType Name="IORRequest">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Type="Int32" Name="Id" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Type="Int32" Name="IOR_ID" Nullable="false" />
+    <Property Type="String" Name="Kanban_ID" MaxLength="100" FixedLength="false" Unicode="true" />
+    <Property Type="String" Name="Submitter" Nullable="false" MaxLength="100" FixedLength="false" Unicode="true" />
+    <Property Type="String" Name="Department" Nullable="false" MaxLength="100" FixedLength="false" Unicode="true" />
+    <Property Type="String" Name="Request_Title" Nullable="false" MaxLength="255" FixedLength="false" Unicode="true" />
+    <Property Type="String" Name="Request_Type" Nullable="false" MaxLength="100" FixedLength="false" Unicode="true" />
+    <Property Type="String" Name="Request_System" Nullable="false" MaxLength="100" FixedLength="false" Unicode="true" />
+    <Property Type="String" Name="Request_Category" Nullable="false" MaxLength="100" FixedLength="false" Unicode="true" />
+    <Property Type="String" Name="Request_Priority" Nullable="false" MaxLength="100" FixedLength="false" Unicode="true" />
+    <Property Type="String" Name="Request_Status" MaxLength="100" FixedLength="false" Unicode="true" />
+    <Property Type="DateTime" Name="Request_File_Date" Nullable="false" Precision="0" />
+    <Property Type="DateTime" Name="Request_Approved_Date" Nullable="false" Precision="0" />
+    <Property Type="DateTime" Name="Request_UAT_Date" Precision="0" />
+    <Property Type="DateTime" Name="Request_End_Date" Precision="0" />
+  </EntityType>
+</Schema>

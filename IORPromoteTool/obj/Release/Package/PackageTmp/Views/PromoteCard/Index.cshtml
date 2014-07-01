@@ -1,0 +1,101 @@
+﻿@model IEnumerable<LeankitLibrary.Entities.Card>
+
+@helper sortLink(string name, int id)
+{
+    @Html.ActionLink(name, "Index", new { page = ViewBag.CurrentPage, sortby = id, isasc = (id == ViewBag.sortBy ? !@ViewBag.isAsc : @ViewBag.isAsc).ToString().ToLower(), search = ViewBag.Search })
+    if (id == ViewBag.sortBy){
+        <span class="arrow @(ViewBag.isAsc ? "up" : "down" )"></span>
+    }
+}
+
+@{
+    ViewBag.Title = "Promotion Tool";
+}
+
+@using (Html.BeginForm())
+{
+    <div class="cards-search">
+        @Html.TextBox("Search")
+        <input type="submit" value="Search" />
+    </div>
+}
+
+<h2>Promotion Tool</h2>
+
+<table class="cards">
+    <tr>
+        <th>
+            @sortLink("Request Id", 1)
+        </th>
+        <th>
+            @sortLink("Submitter", 2)
+        </th>
+        <th>
+            @sortLink("Title", 3)
+        </th>
+        <th>
+            @sortLink("Priority", 4)
+        </th>
+        <th>
+            Tags
+            @*@sortLink("Tags", 5)*@
+        </th>
+        <th>
+            @sortLink("Type", 6)
+        </th>
+        <th>
+            @sortLink("Due Date", 7)
+        </th>
+        @*<th></th>*@
+        <th></th>
+    </tr>
+
+    @{int i = 1;}
+    @foreach (LeankitLibrary.Entities.Card card in Model)
+    {
+        <tr class="@(i++ % 2 == 0 ? "highlighted" : "")">
+            <td>
+                <a href="@ViewBag.BaseUrl@card.Id">
+                    @Html.DisplayFor(m => card.Id)
+                </a>
+            </td>
+            <td>
+                @Html.DisplayFor(m => card.Submitter)
+            </td>
+            <td>
+                @Html.DisplayFor(m => card.Title)
+            </td>
+            <td>
+                @Html.DisplayFor(m => card.PriorityText)
+            </td>
+            <td>
+                @Html.DisplayFor(m => card.Tags)
+            </td>
+            <td>
+                @Html.DisplayFor(m => card.TypeName)
+            </td>
+            <td>
+                @Html.DisplayFor(m => card.DueDate)
+            </td>
+            @*<td>
+                @Html.ActionLink("Details", "Details", new { id = card.Id })
+            </td>*@
+            <td>
+                @Html.ActionLink("Promote", "Promote", new { id = card.Id })
+                @*@Html.ActionLink("Promote", "Promote", @card)*@
+            </td>
+        </tr>
+    }
+</table>
+
+<p>
+    @Html.ActionLink("To Promotion History", "History")
+</p>
+
+<div class="pagination">
+    Page:
+    @for (int p = 1; p <= ViewBag.TotalPages; p++)
+    {
+        @Html.ActionLink(p.ToString(), "Index", new { page = p, sortBy = ViewBag.SortBy, isAsc = ViewBag.IsAsc, search = ViewBag.Search }, new { @class = p == ViewBag.CurrentPage ? "current" : "" })
+    }
+</div>

@@ -1,0 +1,84 @@
+﻿/* BODY
+----------------------------------------------------------*/
+body {
+    background-color: #5c87b2;
+    font-size: 14px;
+    font-family: Arial, "Segoe UI", Verdana, Helvetica, Sans-Serif;
+    line-height: 1.42857143;
+    margin: 0;
+    padding: 0;
+    color: #555;
+}
+
+/* TABLE
+----------------------------------------------------------*/
+
+table {
+    border: solid 1px #e8eef4;
+    border-collapse: collapse;
+}
+
+table td {
+    padding: 5px 5px;
+    border: solid 1px #e8eef4;
+}
+
+table th {
+    padding: 5px 5px;
+    text-align: left;
+    background-color: green;
+    color: #fff;
+    /*background-color: #a6e2a6;*/
+    border: solid 1px #e8eef4;
+}
+
+/* MAIN
+----------------------------------------------------------*/
+
+#main {
+    padding: 30px 30px 15px 30px;
+    background-color: #fff;
+    -webkit-border-radius: 4px 0 0 0;
+    -moz-border-radius: 4px 0 0 0;
+    border-radius: 4px 0 0 0;
+
+    overflow-x: auto;
+    width: 100%;
+    margin: 0 auto;
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    box-sizing: border-box;
+}
+
+/* NAVIGATION
+----------------------------------------------------------*/
+
+/* Other customizations in bootstrap.css under "_Layout.cshtml" */
+
+.container-fluid {
+    background-color: #344f61;
+}
+
+/* ACTIONS
+----------------------------------------------------------*/
+
+.actions-bar {
+    padding-top: 15px;
+}
+
+/* DISPLAY & EDITOR items
+----------------------------------------------------------*/
+.form-horizontal .form-group {
+    margin-left: -15px;
+    margin-right: -15px;
+}
+
+.form-horizontal .control-label
+{
+    text-align: left;
+}
+
+.form-group {
+    margin-bottom: 15px;
+}
+

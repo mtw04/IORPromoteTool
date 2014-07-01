@@ -1,0 +1,14 @@
+﻿<div ng-show="$state.current.name=='record'">
+
+    <record-grid data="records" on-select-item="onSelectItem">
+    </record-grid>
+
+    <div class="actions-bar">
+        <button class="btn btn-primary" data-ng-click="detailsMode()">View Details</button>
+    </div>
+
+</div>
+
+<div ui-view>
+    <!-- Child State in here -->
+</div> 

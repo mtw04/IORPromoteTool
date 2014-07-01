@@ -1,0 +1,145 @@
+﻿/* GENERAL ELEMENTS
+----------------------------------------------------------*/
+
+/* Removes all border corners*/
+* {
+    -webkit-border-radius: 0 !important;
+    -moz-border-radius: 0 !important;
+    border-radius: 0 !important;
+
+    /* Pavel */
+    /*-webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    box-sizing: border-box;
+    overflow-x: auto;
+    width: 100%;
+    margin: 0 auto;*/
+}
+
+html, body {
+    height: 100%;
+}
+
+#wrap
+{
+    height: auto !important;
+    margin: 0 auto -50px;
+    min-height: 100%;
+    padding: 0 0 50px;
+}
+
+#main {
+    padding-bottom: 15px;
+    background-color: #fff;
+}
+
+body {
+    background-color: #fff;
+    font-size: 14px;
+    font-family: Arial, "Segoe UI", Verdana, Helvetica, Sans-Serif;
+    line-height: 1.42857143;
+    margin: 0;
+    padding: 0;
+}
+
+.float-left {
+    float: left;
+}
+
+.float-right {
+    float: right;
+}
+
+.container {
+    background-color: #344f61;
+    
+}
+
+#header {
+    font-size: 16px;
+}
+
+#footer, #footer a {
+    clear: both;
+	margin: auto;
+    padding-top: 15px;
+    color: #fff;
+    background-color: #344f61;
+    font-size: 13px;
+    height: 50px;
+}
+
+.page-header {
+    font-size: 36px;
+    color: #344f61;
+    padding-bottom: 5px;
+    border-bottom: 2px solid #eee;
+    margin: 20px 0px 20px;
+}
+
+/* Other customizations in bootstrap.css under "Mike custom" */
+
+/* TABLE
+----------------------------------------------------------*/
+
+table {
+    border: solid 1px #e8eef4;
+    border-collapse: collapse;
+    max-width: 1140px;
+}
+
+table td {
+    padding: 5px 5px;
+    border: solid 2px #e8eef4;
+    max-width: 400px;
+}
+
+table th {
+    padding: 5px 5px;
+    text-align: left;
+    /*background-color: #31708f;*/
+    background-color: #37a00a;
+    color: #fff;
+    border: solid 1px #555;
+}
+
+@media (max-width: 1200px) {
+    table td {
+        max-width: 250px;
+    }
+    table th {
+
+    }
+}
+
+/* ACTIONS
+----------------------------------------------------------*/
+
+.actions-bar {
+    padding-top: 15px;
+}
+
+/* DISPLAY & EDITOR items
+----------------------------------------------------------*/
+.form-horizontal .form-group {
+    margin-left: -15px;
+    margin-right: -15px;
+}
+
+.form-horizontal .control-label
+{
+    text-align: left;
+}
+
+.form-group {
+    margin-bottom: 15px;
+}
+
+/* CHARTS
+----------------------------------------------------------*/
+
+.chart {
+    width: 500px;
+    height: 500px;
+}
+

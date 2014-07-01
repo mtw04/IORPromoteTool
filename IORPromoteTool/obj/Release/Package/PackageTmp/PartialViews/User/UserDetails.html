@@ -1,0 +1,65 @@
+﻿<h2>User Details</h2>
+
+        
+<div class="col-md-9">
+    <hr />
+    <form class="form-horizontal" name="UserDetailsForm" id="UserDetailsForm" method="post">
+        <div class="form-group">
+            <label class="col-sm-4 control-label" for="UserName">User Name:</label>
+            <div class="col-sm-8">
+                <input class="form-control" id="UserName" maxlength="1024" name="UserName" type="text" data-ng-model="user.Name" data-ng-required="true" />
+                <span class="label label-danger" data-ng-show="UserDetailsForm.UserName.$error.required && formError">Required!</span> 
+            </div>
+        </div>
+
+        <div class="form-group">
+            <label class="col-sm-4 control-label" for="UserFullName">Full name:</label>
+            <div class="col-sm-8">
+                <input class="form-control" id="UserFullName" maxlength="1024" name="UserFullName" type="text" data-ng-model="user.FullName" data-ng-required="true" />
+                <!--<span class="error" data-ng-show="UserDetailsForm.userFullName.$error.required && formError">Required!</span>--> 
+            </div>
+        </div>
+
+        <div class="form-group">
+            <label class="col-sm-4 control-label" for="UserFrequency">Promotion Frequency:</label>
+            <div class="col-sm-8">
+                <input class="form-control" id="UserFrequency" maxlength="1024" name="UserFrequency" type="text" data-ng-model="user.Frequency"/>
+                <!--<span class="error" data-ng-show="UserDetailsForm.userFrequency.$error.required && formError">Required!</span>--> 
+            </div>
+        </div>
+
+        <div class="form-group">
+            <label class="col-sm-4 control-label" for="UserLastPromote">Last Promotion Date:</label>
+            <div class="col-sm-8">
+                 <p class="input-group">
+                    <input class="form-control" id="UserLastPromote" name="UserLastPromote" type="text" data-ng-model="user.LastPromote" datepicker-popup="MM/dd/yyyy"/>
+                    <span class="input-group-btn">
+                    <button class="btn btn-default" ng-click="open($event)"><i class="glyphicon glyphicon-calendar"></i></button>
+                    </span>
+                </p>
+                <!--<span class="error" data-ng-show="UserDetailsForm.userFrequency.$error.required && formError">Required!</span>--> 
+            </div>
+        </div>
+
+        <hr />
+
+        <div class="form-group" data-ng-show="formError">
+            <label class="label label-danger" for="UserError">{{formError}}</label>
+        </div>
+
+        <div data-ng-hide="isDeleteRequested">
+            <button class="btn btn-success" data-ng-click="save(user)"><i class="glyphicon glyphicon-floppy-disk"></i> Save</button>
+            <button class="btn btn-default" data-ng-click="returnToList()"><i class="glyphicon glyphicon-remove"></i> Cancel</button>
+        </div>
+        <div data-ng-show="isDeleteRequested">
+            <button class="btn btn-danger" data-ng-click="delete(user)"><i class="glyphicon glyphicon-trash"></i> Confirm Delete</button>
+            <button class="btn btn-default" data-ng-click="returnToList()"><i class="glyphicon glyphicon-remove"></i> Cancel</button>
+        </div>
+        
+    </form>
+</div>
+
+
+
+
+

@@ -1,0 +1,45 @@
+﻿@model IORPromoteTool.Models.PromoteUser
+
+@{
+    ViewBag.Title = "User Details";
+}
+
+<h2>User Details</h2>
+
+<fieldset>
+    <legend>IOR User</legend>
+
+    <div class="display-label">
+        @Html.DisplayNameFor(model => model.Name)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.Name)
+    </div>
+
+    <div class="display-label">
+        @Html.DisplayNameFor(model => model.FullName)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.FullName)
+    </div>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.Frequency)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.Frequency)
+    </div>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.LastPromote)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.LastPromote)
+    </div>
+
+</fieldset>
+<p>
+    @Html.ActionLink("Edit", "Edit", new { id = Model.Id }) |
+    @Html.ActionLink("Back to List", "Index")
+
+</p>

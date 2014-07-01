@@ -1,0 +1,76 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+  <EntityContainerMapping StorageEntityContainer="PromoteModelStoreContainer" CdmEntityContainer="PromoteEntities">
+    <EntitySetMapping Name="IORSettings">
+      <EntityTypeMapping TypeName="PromoteModel.IORSetting">
+        <MappingFragment StoreEntitySet="IORSettings">
+          <ScalarProperty Name="Environment" ColumnName="Environment" />
+          <ScalarProperty Name="Id" ColumnName="Id" />
+          <ScalarProperty Name="BoardId" ColumnName="BoardId" />
+          <ScalarProperty Name="TempPath" ColumnName="TempPath" />
+          <ScalarProperty Name="PromoteLane" ColumnName="PromoteLane" />
+          <ScalarProperty Name="LogInfo" ColumnName="LogInfo" />
+          <ScalarProperty Name="LogDetails" ColumnName="LogDetails" />
+          <ScalarProperty Name="PromoteFrequency" ColumnName="PromoteFrequency" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="PromoteUsers">
+      <EntityTypeMapping TypeName="PromoteModel.PromoteUser">
+        <MappingFragment StoreEntitySet="PromoteUsers">
+          <ScalarProperty Name="FullName" ColumnName="FullName" />
+          <ScalarProperty Name="Id" ColumnName="Id" />
+          <ScalarProperty Name="Name" ColumnName="Name" />
+          <ScalarProperty Name="Frequency" ColumnName="Frequency" />
+          <ScalarProperty Name="LastPromote" ColumnName="LastPromote" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="PromoteRecords">
+      <EntityTypeMapping TypeName="PromoteModel.PromoteRecord">
+        <MappingFragment StoreEntitySet="PromoteRecords">
+          <ScalarProperty Name="Submitter" ColumnName="Submitter" />
+          <ScalarProperty Name="CardId" ColumnName="CardId" />
+          <ScalarProperty Name="Deadline" ColumnName="Deadline" />
+          <ScalarProperty Name="Tags" ColumnName="Tags" />
+          <ScalarProperty Name="Priority" ColumnName="Priority" />
+          <ScalarProperty Name="Type" ColumnName="Type" />
+          <ScalarProperty Name="Description" ColumnName="Description" />
+          <ScalarProperty Name="Title" ColumnName="Title" />
+          <ScalarProperty Name="PromoteDate" ColumnName="PromoteDate" />
+          <ScalarProperty Name="Promoter" ColumnName="Promoter" />
+          <ScalarProperty Name="Id" ColumnName="Id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="PromoteFrequencies">
+      <EntityTypeMapping TypeName="PromoteModel.PromoteFrequency">
+        <MappingFragment StoreEntitySet="PromoteFrequency">
+          <ScalarProperty Name="Frequency" ColumnName="Frequency" />
+          <ScalarProperty Name="Id" ColumnName="Id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="IORRequests">
+      <EntityTypeMapping TypeName="PromoteModel.IORRequest">
+        <MappingFragment StoreEntitySet="IORRequests">
+          <ScalarProperty Name="Request_End_Date" ColumnName="Request_End_Date" />
+          <ScalarProperty Name="Request_UAT_Date" ColumnName="Request_UAT_Date" />
+          <ScalarProperty Name="Request_Approved_Date" ColumnName="Request_Approved_Date" />
+          <ScalarProperty Name="Request_File_Date" ColumnName="Request_File_Date" />
+          <ScalarProperty Name="Request_Status" ColumnName="Request_Status" />
+          <ScalarProperty Name="Request_Priority" ColumnName="Request_Priority" />
+          <ScalarProperty Name="Request_Category" ColumnName="Request_Category" />
+          <ScalarProperty Name="Request_System" ColumnName="Request_System" />
+          <ScalarProperty Name="Request_Type" ColumnName="Request_Type" />
+          <ScalarProperty Name="Request_Title" ColumnName="Request_Title" />
+          <ScalarProperty Name="Department" ColumnName="Department" />
+          <ScalarProperty Name="Submitter" ColumnName="Submitter" />
+          <ScalarProperty Name="Kanban_ID" ColumnName="Kanban_ID" />
+          <ScalarProperty Name="IOR_ID" ColumnName="IOR_ID" />
+          <ScalarProperty Name="Id" ColumnName="Id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+  </EntityContainerMapping>
+</Mapping>

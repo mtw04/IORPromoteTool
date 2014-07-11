@@ -51,6 +51,44 @@ namespace IORPromoteTool.Controllers
             return depDict;
         }
 
+        // GET specificApi/Request
+        public ChartData GetChartYears()
+        {
+            IEnumerable<IORRequest> requestsYear = this.db.IORRequests.GroupBy(m => m.Request_End_Date.Value.Year).Select(grp => grp.FirstOrDefault()).Where(m => m.Request_End_Date != null);
+            //IEnumerable<IORRequest> requestsMonth = this.db.IORRequests.GroupBy(m => m.Request_End_Date.Value.Month).Select(grp => grp.FirstOrDefault()).Where(m => m.Request_End_Date != null);
+            ChartData chartData = new ChartData { Years = new List<int>(), Months = new List<int>() };
+            
+            // Get list of Years
+            foreach (IORRequest request in requestsYear)
+            {
+                chartData.Years.Add(request.Request_End_Date.Value.Year);
+            }
+
+            // Get list of Months
+            //foreach (IORRequest request in requestsMonth)
+            //{
+            //    chartData.Months.Add(request.Request_End_Date.Value.Month);
+            //}
+
+            return chartData;
+        }
+
+        // GET specificApi/Request
+        public ChartData GetChartMonths(int year)
+        {
+            IEnumerable<IORRequest> requestsMonth = this.db.IORRequests.GroupBy(m => m.Request_End_Date.Value.Month).Select(grp => grp.FirstOrDefault()).Where(m => m.Request_End_Date != null && m.Request_End_Date.Value.Year == year);
+            ChartData chartData = GetChartYears(); //Get Years data
+
+            // Get list of Months
+            foreach (IORRequest request in requestsMonth)
+            {
+                chartData.Months.Add(request.Request_End_Date.Value.Month);
+            }
+
+            return chartData;
+        }
+
+        // Dispose
         protected override void Dispose(bool disposing)
         {
             db.Dispose();
@@ -66,5 +104,11 @@ namespace IORPromoteTool.Controllers
     public class DepartmentDict
     {
         public Dictionary<string, int> Departments { get; set; }
+    }
+
+    public class ChartData
+    {
+        public List<int> Years { get; set; }
+        public List<int> Months { get; set; }
     }
 }

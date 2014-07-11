@@ -7,3 +7,17 @@
 </div>-->
 
 <div google-chart chart="chartObject"></div>
+
+<div class="form-group">
+    <label class="col-sm-3 control-label" for="ChartDataYear">Year:</label>
+    <div class="col-sm-9">
+        <select class="form-control" id="chartYear" name="chartYear" data-ng-model="chartyear" data-ng-options="option for option in options.Years"></select>
+    </div>
+</div>
+
+<div class="form-group">
+    <label class="col-sm-3 control-label" for="ChartDataMonth">Month:</label>
+    <div class="col-sm-9">
+        <select class="form-control" id="chartMonth" name="chartMonth" data-ng-model="chartmonth" data-ng-options="option for option in options.Months"></select>
+    </div>
+</div>

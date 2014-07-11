@@ -3,6 +3,7 @@
 .controller('ChartCtrl', ['$scope', 'CrudAPI', 'SpecificAPI', function ($scope, CrudAPI, SpecificAPI) {
 
     /* Chart Object */
+    // Chart object needs to be initialized first in order for the columns and rows to be populated by synchronous calls
     $scope.chartObject = {
         "type": "PieChart",
         "displayed": false,
@@ -19,24 +20,46 @@
         "view": {}
     }
 
-    /* Item Index */
-    var getItems = function () {
-        CrudAPI('RequestApi').query({},
-            function (items) {
-                $scope.items = items;
-            },
-            function (error) {
-                $scope.errorMessage = error;
-            });
+    /* Get Chart Years */
+    var getChartYears = function () {
+        SpecificAPI('RequestSpecificApi').query({ action: "GetChartYears" },
+            function (options) {
+                $scope.options = options;
+            }
+            );
     };
-    getItems();
+    getChartYears();
+
+    /* Watch Chart Years */
+    var chartYearWatch = $scope.$watch('chartyear', function () {
+        getChartMonths();
+    });
+
+    /* Get Chart Months */
+    var getChartMonths = function () {
+        SpecificAPI('RequestSpecificApi').query({ action: "GetChartMonths", year: $scope.chartyear || 0}, // Initialize to 0
+             function (options) {
+                 $scope.options = options;
+             }
+             );
+    };
+
+    /* Watch Chart Months */
+    var chartMonthWatch = $scope.$watch('chartmonth', function () {
+        setChartRows();
+    });
+
+    //$scope.chartyear = 0;
+    //$scope.chartmonth = 0;
 
     /* Set Chart Rows */
     var setChartRows = function () {
-        SpecificAPI('RequestSpecificApi').query({ action: "GetDepDict", year: 2013, month: 4 }, // API call is asynchronous
-            function (items) {
-                $scope.items = items;
-                angular.forEach(items.Departments, function (value, key) {
+        SpecificAPI('RequestSpecificApi').query({ action: "GetDepDict", year: $scope.chartyear || 0, month: $scope.chartmonth || 0}, // API call is asynchronous
+            function (deps) {
+                $scope.deps = deps;
+                $scope.chartObject.data.rows.length = 0; //clear array
+
+                angular.forEach(deps.Departments, function (value, key) {
                     var department = key;
                     var depCount = value;
 
@@ -52,7 +75,6 @@
                 $scope.errorMessage = error;
             });
     };
-    setChartRows();
     
     /* Set Chart Columns */
     var setChartCols = function () {
